@@ -14,6 +14,7 @@ dependencies:
   - BeautifulSoup4
   - widgetsnbextension
   - pip
+  - cmake
   - pip:
       - gotran
       - gitpython
