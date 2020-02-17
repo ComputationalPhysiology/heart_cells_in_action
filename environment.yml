@@ -1,0 +1,19 @@
+name: heart_cells_in_action
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - numpy
+  - scipy
+  - matplotlib
+  - html5lib
+  - lxml
+  - requests
+  - ipympl
+  - BeautifulSoup4
+  - widgetsnbextension
+  - pip
+  - pip:
+      - gotran
+      - gitpython
