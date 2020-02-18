@@ -77,6 +77,18 @@ class CModel:
             c_int,  # num_timesteps
         ]
 
+        self.lib.monitored_values_single.restype = None
+        self.lib.monitored_values_single.argtypes = [
+            float64_array,  # monitored
+            float64_array_2d,  # states
+            float64_array,  # parameters
+            float64_array,  # u
+            float64_array,  # m
+            float64_array,  # t_values
+            c_int,  # num_timesteps
+            c_int,  # index
+        ]
+
         solve_functions = [
             self.lib.ode_solve_forward_euler,
             self.lib.ode_solve_rush_larsen,
@@ -98,8 +110,8 @@ class CModel:
         parameter_values = self.init_parameters()
         if parameters is not None:
             assert isinstance(parameters, dict)
-            for name, new_value in parameters.items():
-                index = self.parameter_index(name)
+            for pname, new_value in parameters.items():
+                index = self.parameter_index(pname)
                 old_value = parameter_values[index]
                 if old_value != new_value:
                     parameter_values[index] = new_value
@@ -110,6 +122,25 @@ class CModel:
 
         self.lib.monitored_values(
             monitored_values, states, parameter_values, u, m, t, t.size
+        )
+        return monitored_values
+
+    def monitor_single(self, name, states, t, parameters=None):
+        index = self.monitor_index(name)
+        parameter_values = self.init_parameters()
+        if parameters is not None:
+            assert isinstance(parameters, dict)
+            for pname, new_value in parameters.items():
+                pindex = self.parameter_index(pname)
+                old_value = parameter_values[pindex]
+                if old_value != new_value:
+                    parameter_values[pindex] = new_value
+        u = np.zeros(self.num_states, dtype=np.float64)
+        monitored_values = np.zeros(t.size, dtype=np.float64)
+        m = np.zeros(self.num_monitored, dtype=np.float64)
+
+        self.lib.monitored_values_single(
+            monitored_values, states, parameter_values, u, m, t, t.size, index
         )
         return monitored_values
 
