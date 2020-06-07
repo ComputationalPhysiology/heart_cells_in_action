@@ -1,0 +1,2030 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The action potential &#8212; Heart cells in Action</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="python_model.html" />
+    <link rel="prev" title="Introducing the heart cells" href="heart_cell.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Heart cells in Action</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="README.html">Heart Cells in Action</a>
+  </li>
+  <li class="">
+    <a href="index.html">Cellmodel tutorials</a>
+  </li>
+  <li class="">
+    <a href="heart_cell.html">Introducing the heart cells</a>
+  </li>
+  <li class="active">
+    <a href="">The action potential</a>
+  </li>
+  <li class="">
+    <a href="cellml.html">The CellML model repository</a>
+  </li>
+  <li class="">
+    <a href="Cav12.html">L-type Ca channel</a>
+  </li>
+  <li class="">
+    <a href="Kir21.html">hERG channel</a>
+  </li>
+  <li class="">
+    <a href="Kv43.html">hERG channel</a>
+  </li>
+  <li class="">
+    <a href="KvLQT1.html">hERG channel</a>
+  </li>
+  <li class="">
+    <a href="Nav15.html">hERG channel</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/action_potential.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+            <div class="dropdown-buttons sourcebuttons">
+                <a class="repository-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
+                <a class="issues-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action/issues/new?title=Issue%20on%20page%20%2Faction_potential.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                <a class="edit-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action/edit/master/./action_potential.ipynb"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+            </div>
+        </div>
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ComputationalPhysiology/heart_cells_in_action/master?urlpath=tree/./action_potential.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#electrodiffusion" class="nav-link">Electrodiffusion</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#diffusion" class="nav-link">Diffusion</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#electric-forces" class="nav-link">Electric forces</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#the-nernst-planck-equation" class="nav-link">The Nernst-Planck equation</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#the-nernst-equation" class="nav-link">The Nernst equation</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#from-flux-to-current" class="nav-link">From flux to Current</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#more-than-one-ion-the-goldmanhodgkinkatz-equations" class="nav-link">More than one ion - The Goldman–Hodgkin–Katz Equations</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/ComputationalPhysiology/heart_cells_in_action/edit/master/./action_potential.ipynb">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="the-action-potential">
+<h1>The action potential<a class="headerlink" href="#the-action-potential" title="Permalink to this headline">¶</a></h1>
+<p>We refer to the intracellular and extracellular potential as <span class="math notranslate nohighlight">\(V_i\)</span> and <span class="math notranslate nohighlight">\(V_e\)</span> respectively. Note that a potential must be measured realtive to someting and we assume that <span class="math notranslate nohighlight">\(V_i\)</span> and <span class="math notranslate nohighlight">\(V_e\)</span> are measured relative to some common ground lead. The membrane potential is thus the potiential differece between the intracellular and extracellular space</p>
+<div class="math notranslate nohighlight">
+\[ V = V_i - V_e\]</div>
+<p>The resting membrane potential is typically around -70 mV (ref??). This means that the potential in the intrecellular space is lower than in the extrecellular space.</p>
+<p>As been noted, the membrane potential arises from a separatio of the intrecellular and extracelluar space by a membrane. The intrecellular medium, called the cytoplasm and the extracellular medium contains different concentraion of various ions. The most important ions are sodium (Na<span class="math notranslate nohighlight">\(^{+}\)</span>), potassium (K<span class="math notranslate nohighlight">\(^{+}\)</span>) and Calcium (Ca<span class="math notranslate nohighlight">\(^{2+}\)</span>).</p>
+<p>The membrane, which is about 5nM (ref??) is composed of a lipid bilayer, i.e two layers of lipids which have one hydrophilic end pointing outwards, and one hydrophobic end pointing inwards. The membrane is virtually impermable to water and ions, meaning that it can seprate positive ions on one side and negative ions on the other side, which leads to an electric field across the membrane. From a modeling perspective we can think of this as electrical capasitor.</p>
+<p>Ion channels are pores in the lipid bilayer, which allows specific ions to flow through the membrane. For example ion channels that are mostly permeable to potassium are called potassium channels. Some of these ion channles can exist in different states; they can be open meaning that ions can flow through or closed, meaning that ions cannot flow through. Such channels are usually referred to as activate channels, wheras channels than does not change the pemeability is reffered to as passive states.</p>
+<p>Ion pumps is a different protien stucture that primarly pumps specific ions in and out of the cell. One example is the sodium-potassium pump which pumps potassium (2 K<span class="math notranslate nohighlight">\(^{+}\)</span>) into the cell sodium (3 Na<span class="math notranslate nohighlight">\(^{+}\)</span>) out of the cell.</p>
+<div class="section" id="electrodiffusion">
+<h2>Electrodiffusion<a class="headerlink" href="#electrodiffusion" title="Permalink to this headline">¶</a></h2>
+<p>Ions that flow through the membrane can lead to an electric field, i.e an electric force resulting for different charges in the intrecellular and extracellular space. At the same time, concentration differences leads to diffusion of ions for the space with higher concentration to the space with lower concentration. This combination of electric forces and diffusion is called electrodiffusion.</p>
+<p>In the following we will look at a specific ion (or moelcule) <span class="math notranslate nohighlight">\(X\)</span> with an intracellular concentration <span class="math notranslate nohighlight">\(X_i\)</span> and extracellular concentration <span class="math notranslate nohighlight">\(X_e\)</span>.</p>
+<div class="section" id="diffusion">
+<h3>Diffusion<a class="headerlink" href="#diffusion" title="Permalink to this headline">¶</a></h3>
+<p>Diffusion is the process that moves particle from regions of high concentrations to region of low concentration. A steady state solution is obtained when all regions have equal concentration. Given an arbitrary molecule <span class="math notranslate nohighlight">\(X\)</span>, with different concentrations <span class="math notranslate nohighlight">\([X]\)</span> in the intracellular and extracellular space will have a flux of iouns described by <em>Ficks law</em></p>
+<div class="math notranslate nohighlight">
+\[ J_{X, \text{diff}}  =  -D_X \frac{\mathrm{d}[X]}{\mathrm{d}x}. \]</div>
+<p>Here <span class="math notranslate nohighlight">\(J_{X, \text{diff}}\)</span> is the flux, <span class="math notranslate nohighlight">\(\frac{\mathrm{d}[X]}{\mathrm{d}x}\)</span> is the concentration gradient and <span class="math notranslate nohighlight">\(D_X\)</span> is the diffusion coefficient determining how easy it is for ions to flow through the membrane. The negative sign
+indicates that the flux is in the opposite direction to that in which the concentration gradient increases.</p>
+</div>
+<div class="section" id="electric-forces">
+<h3>Electric forces<a class="headerlink" href="#electric-forces" title="Permalink to this headline">¶</a></h3>
+<p>The contribution of flow of ions throug the membrance coming from the electric field is given by <em>Planck’s equation</em></p>
+<div class="math notranslate nohighlight">
+\[ J_{X, \text{drift}} = -u \frac{z_X}{|z_X|}[X] \frac{\mathrm{d}V}{\mathrm{d}x}, \]</div>
+<p>where <span class="math notranslate nohighlight">\(u\)</span> is the mobility of the ion and <span class="math notranslate nohighlight">\(z_X\)</span> is the valence so that <span class="math notranslate nohighlight">\(\frac{z_X}{|z_X|}\)</span> is +1 for cations and -1 for anions.
+The diffusion coeffeicient can be further be written as</p>
+<div class="math notranslate nohighlight">
+\[ D_X = \frac{ u R T }{F |z_X|} \]</div>
+<p>with R being the gas constant, T the temperature and F is Faraday’s constant, so that the flux becomes</p>
+<div class="math notranslate nohighlight">
+\[ J_{X, \text{drift}} = -D \frac{z_X F}{RT}[X] \frac{\mathrm{d}V}{\mathrm{d}x}, \]</div>
+</div>
+<div class="section" id="the-nernst-planck-equation">
+<h3>The Nernst-Planck equation<a class="headerlink" href="#the-nernst-planck-equation" title="Permalink to this headline">¶</a></h3>
+<p>The total flux of ions of type <span class="math notranslate nohighlight">\(X\)</span> across the membrane is therefore</p>
+<div class="math notranslate nohighlight">
+\[ J_X = J_{X, \text{diff}} + J_{X, \text{drift}} = -D_X \left( \frac{\mathrm{d}[X]}{\mathrm{d}x} + \frac{z_X F}{RT}[X] \frac{\mathrm{d}V}{\mathrm{d}x} \right) \]</div>
+</div>
+<div class="section" id="the-nernst-equation">
+<h3>The Nernst equation<a class="headerlink" href="#the-nernst-equation" title="Permalink to this headline">¶</a></h3>
+<p>The Nernst equation can be found by saying the flux coming from the electric field should balance the flux coming from the diffusion, i.e</p>
+<div class="math notranslate nohighlight">
+\[-D_X \left( \frac{\mathrm{d}[X]}{\mathrm{d}x} + \frac{z_X F}{RT}[X] \frac{\mathrm{d}V}{\mathrm{d}x} \right) = 0 \]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{[X]} \frac{\mathrm{d}[X]}{\mathrm{d}x} + \frac{z_X F}{RT} \frac{\mathrm{d}V}{\mathrm{d}x} = 0\]</div>
+<p>Integrating <span class="math notranslate nohighlight">\(x\)</span> for <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(L\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[ln ([X]) \; \big|_{X_i}^{X_e} = \frac{z_X F}{RT} V \; \big|_{V_i}^{V_e} = \frac{z_X F}{RT} (V_i - V_e) =  \frac{z_X F}{RT} V  \]</div>
+<p>where now <span class="math notranslate nohighlight">\(V\)</span> denotes the membrane potential. We want thus write the membrane potential as</p>
+<div class="math notranslate nohighlight">
+\[ V = E_X = \frac{RT}{z_X F} ln \left( \frac{[X]_e}{[X]_i} \right)\]</div>
+<p>This final equation is called Nernst equation.
+(Note that the same equation can also be derrived using Gibbs free energy)</p>
+<p>For a given ion X with a know intracellular an extracellular concentration we can eailty compute the value of the membrane potential that will lead to a zero net flux across the membrane. We usually call this potential the Nernst potential.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8314.47</span> <span class="c1"># J*mole**-1*K**-1&quot;</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">310</span> <span class="c1"># K</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">96485.3415</span> <span class="c1"># C*mM**-1</span>
+
+<span class="c1"># These values are taken from the TenTussher 2006 model for Human Ventricular Tissue</span>
+<span class="n">Na_i</span> <span class="o">=</span> <span class="mf">11.6</span> <span class="c1"># mM</span>
+<span class="n">Na_e</span> <span class="o">=</span> <span class="mf">140.0</span> <span class="c1"># mM</span>
+<span class="n">E_Na</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">F</span><span class="p">))</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="n">Na_e</span> <span class="o">/</span> <span class="n">Na_i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Resting potential for Na^+: </span><span class="si">{</span><span class="n">E_Na</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mV&quot;</span><span class="p">)</span>
+
+<span class="n">K_i</span> <span class="o">=</span> <span class="mf">138.3</span> <span class="c1"># mM</span>
+<span class="n">K_e</span> <span class="o">=</span> <span class="mf">5.4</span> <span class="c1"># mM</span>
+<span class="n">E_K</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">F</span><span class="p">))</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="n">K_e</span> <span class="o">/</span> <span class="n">K_i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Resting potential for K^+: </span><span class="si">{</span><span class="n">E_K</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Resting potential for Na^+: 66.53 mV
+Resting potential for K^+: -86.63 mV
+</pre></div>
+</div>
+</div>
+</div>
+<p>So assuming that the ion channels for the sodium is open, there will be a flow of ions into the cell when the membrane potential is below 66.5 mV. If the membrane potential is higher than 66.5 mV then sodium will flow out of the cell.
+For potassium there will be a flow of potassium out of the cell if the membrane potential is larger than -86.6 mV.</p>
+</div>
+<div class="section" id="from-flux-to-current">
+<h3>From flux to Current<a class="headerlink" href="#from-flux-to-current" title="Permalink to this headline">¶</a></h3>
+<p>While a flux is the number of moles of an ions through a cross-section og unit area, a current is a the amount of positive charge flowing per unit time. A current density is the amount of charge flowing per unit of time per uning ot cross-sectional area. We typically denote the current for ion <span class="math notranslate nohighlight">\(X\)</span> by a <span class="math notranslate nohighlight">\(I_X\)</span> and the current denisty by <span class="math notranslate nohighlight">\(i_X\)</span>.</p>
+<p>The current denisty <span class="math notranslate nohighlight">\(i_X\)</span> is propotional to the flux <span class="math notranslate nohighlight">\(J_X\)</span> and can be written as</p>
+<div class="math notranslate nohighlight">
+\[ i_X = F z_X J_X \]</div>
+<p>where <span class="math notranslate nohighlight">\(F\)</span> is Faraday’s constant adn z_X is the valence.</p>
+</div>
+<div class="section" id="more-than-one-ion-the-goldmanhodgkinkatz-equations">
+<h3>More than one ion - The Goldman–Hodgkin–Katz Equations<a class="headerlink" href="#more-than-one-ion-the-goldmanhodgkinkatz-equations" title="Permalink to this headline">¶</a></h3>
+<p>In general there can be more then one ion flowing through the membrane, meaning that the flux for ion <span class="math notranslate nohighlight">\(X\)</span> must be found by taking into cosideration the other ions as well (because of the electric field only cares about the charge). There for $ J_X = J_{X, \text{diff}} + J_{X, \text{drift}} $ is not neccesary zero. However we can find a steady state solution by taking this into account by solving for a given membrane potential <span class="math notranslate nohighlight">\(V\)</span> and a membrane of thickness <span class="math notranslate nohighlight">\(L\)</span>. In this case we can write <span class="math notranslate nohighlight">\($ \frac{\mathrm{d}V}{\mathrm{d}x} = -  \frac{V}{L}\)</span>$, to get</p>
+<div class="math notranslate nohighlight">
+\[J + D_X \left( \frac{\mathrm{d}[X]}{\mathrm{d}x} - \frac{z_X F}{RT}[X] \frac{V}{L} \right) = 0\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\mathrm{d}[X]}{\mathrm{d}x} - \frac{z_X F}{RT}[X] \frac{V}{L} + \frac{J_X}{D_X} = 0\]</div>
+<p>whose solutions is</p>
+<div class="math notranslate nohighlight">
+\[\exp \left( -\frac{z_XVFx}{RTL} \right) [X](x) = \frac{J_XRTL}{D_Xz_XVF} \left[ \exp \left( -\frac{z_XVFx}{RTL} \right) - 1 \right] + [X]_i.\]</div>
+<p>We can therefore find that the flux can be written as</p>
+<div class="math notranslate nohighlight">
+\[ J_X = \frac{D_X}{L}\frac{z_XVF}{RT}\frac{[X]_i - [X]_e \exp \left( -\frac{z_XVF}{RT} \right)}{1- \exp \left( -\frac{z_XVF}{RT} \right)}\]</div>
+<p>The corresponding current density is thus</p>
+<div class="math notranslate nohighlight">
+\[i_X =  F z_X J_X  = P_X \frac{z_X^2F^2}{RT}V\frac{[X]_i - [X]_e \exp \left( -\frac{z_XVF}{RT} \right)}{1- \exp \left( -\frac{z_XVF}{RT} \right)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P_X = \frac{D_X}{L}\)</span> is the permeability of the membrane to ion X.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8314.47</span> <span class="c1"># J*mole**-1*K**-1&quot;</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">310</span> <span class="c1"># K</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">96485.3415</span> <span class="c1"># C*mM**-1</span>
+
+<span class="c1"># These values are taken from the TenTussher 2006 model for Human Ventricular Tissue</span>
+<span class="n">Na_i</span> <span class="o">=</span> <span class="mf">11.6</span> <span class="c1"># mM</span>
+<span class="n">Na_e</span> <span class="o">=</span> <span class="mf">140.0</span> <span class="c1"># mM</span>
+<span class="n">z_Na</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Set this to one - it will only scale the current anyway</span>
+<span class="n">P_Na</span> <span class="o">=</span> <span class="mf">1e-6</span> <span class="c1">#</span>
+
+<span class="c1"># Select membrane potential between -85 and 50 mV</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="n">i_Na</span> <span class="o">=</span> <span class="n">P_Na</span> <span class="o">*</span> <span class="p">(((</span><span class="n">z_Na</span> <span class="o">*</span> <span class="n">F</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="p">((</span><span class="n">Na_i</span> <span class="o">-</span> <span class="n">Na_e</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">z_Na</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="n">F</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">z_Na</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="n">F</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">))))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">i_Na</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Membrane potential (mV)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Sodium current density (uA/cm^2)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">/* Put everything inside the global mpl namespace */
+window.mpl = {};
+
+
+mpl.get_websocket_type = function() {
+    if (typeof(WebSocket) !== 'undefined') {
+        return WebSocket;
+    } else if (typeof(MozWebSocket) !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert('Your browser does not have WebSocket support. ' +
+              'Please try Chrome, Safari or Firefox ≥ 6. ' +
+              'Firefox 4 and 5 are also supported but you ' +
+              'have to enable WebSockets in about:config.');
+    };
+}
+
+mpl.figure = function(figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = (this.ws.binaryType != undefined);
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById("mpl-warnings");
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent = (
+                "This browser does not support binary websocket messages. " +
+                    "Performance may be slow.");
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = $('<div/>');
+    this._root_extra_style(this.root)
+    this.root.attr('style', 'display: inline-block');
+
+    $(parent_element).append(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen =  function () {
+            fig.send_message("supports_binary", {value: fig.supports_binary});
+            fig.send_message("send_image_mode", {});
+            if (mpl.ratio != 1) {
+                fig.send_message("set_dpi_ratio", {'dpi_ratio': mpl.ratio});
+            }
+            fig.send_message("refresh", {});
+        }
+
+    this.imageObj.onload = function() {
+            if (fig.image_mode == 'full') {
+                // Full images could contain transparency (where diff images
+                // almost always do), so we need to clear the canvas so that
+                // there is no ghosting.
+                fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+            }
+            fig.context.drawImage(fig.imageObj, 0, 0);
+        };
+
+    this.imageObj.onunload = function() {
+        fig.ws.close();
+    }
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+}
+
+mpl.figure.prototype._init_header = function() {
+    var titlebar = $(
+        '<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ' +
+        'ui-helper-clearfix"/>');
+    var titletext = $(
+        '<div class="ui-dialog-title" style="width: 100%; ' +
+        'text-align: center; padding: 3px;"/>');
+    titlebar.append(titletext)
+    this.root.append(titlebar);
+    this.header = titletext[0];
+}
+
+
+
+mpl.figure.prototype._canvas_extra_style = function(canvas_div) {
+
+}
+
+
+mpl.figure.prototype._root_extra_style = function(canvas_div) {
+
+}
+
+mpl.figure.prototype._init_canvas = function() {
+    var fig = this;
+
+    var canvas_div = $('<div/>');
+
+    canvas_div.attr('style', 'position: relative; clear: both; outline: 0');
+
+    function canvas_keyboard_event(event) {
+        return fig.key_event(event, event['data']);
+    }
+
+    canvas_div.keydown('key_press', canvas_keyboard_event);
+    canvas_div.keyup('key_release', canvas_keyboard_event);
+    this.canvas_div = canvas_div
+    this._canvas_extra_style(canvas_div)
+    this.root.append(canvas_div);
+
+    var canvas = $('<canvas/>');
+    canvas.addClass('mpl-canvas');
+    canvas.attr('style', "left: 0; top: 0; z-index: 0; outline: 0")
+
+    this.canvas = canvas[0];
+    this.context = canvas[0].getContext("2d");
+
+    var backingStore = this.context.backingStorePixelRatio ||
+	this.context.webkitBackingStorePixelRatio ||
+	this.context.mozBackingStorePixelRatio ||
+	this.context.msBackingStorePixelRatio ||
+	this.context.oBackingStorePixelRatio ||
+	this.context.backingStorePixelRatio || 1;
+
+    mpl.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband = $('<canvas/>');
+    rubberband.attr('style', "position: absolute; left: 0; top: 0; z-index: 1;")
+
+    var pass_mouse_events = true;
+
+    canvas_div.resizable({
+        start: function(event, ui) {
+            pass_mouse_events = false;
+        },
+        resize: function(event, ui) {
+            fig.request_resize(ui.size.width, ui.size.height);
+        },
+        stop: function(event, ui) {
+            pass_mouse_events = true;
+            fig.request_resize(ui.size.width, ui.size.height);
+        },
+    });
+
+    function mouse_event_fn(event) {
+        if (pass_mouse_events)
+            return fig.mouse_event(event, event['data']);
+    }
+
+    rubberband.mousedown('button_press', mouse_event_fn);
+    rubberband.mouseup('button_release', mouse_event_fn);
+    // Throttle sequential mouse events to 1 every 20ms.
+    rubberband.mousemove('motion_notify', mouse_event_fn);
+
+    rubberband.mouseenter('figure_enter', mouse_event_fn);
+    rubberband.mouseleave('figure_leave', mouse_event_fn);
+
+    canvas_div.on("wheel", function (event) {
+        event = event.originalEvent;
+        event['data'] = 'scroll'
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        mouse_event_fn(event);
+    });
+
+    canvas_div.append(canvas);
+    canvas_div.append(rubberband);
+
+    this.rubberband = rubberband;
+    this.rubberband_canvas = rubberband[0];
+    this.rubberband_context = rubberband[0].getContext("2d");
+    this.rubberband_context.strokeStyle = "#000000";
+
+    this._resize_canvas = function(width, height) {
+        // Keep the size of the canvas, canvas container, and rubber band
+        // canvas in synch.
+        canvas_div.css('width', width)
+        canvas_div.css('height', height)
+
+        canvas.attr('width', width * mpl.ratio);
+        canvas.attr('height', height * mpl.ratio);
+        canvas.attr('style', 'width: ' + width + 'px; height: ' + height + 'px;');
+
+        rubberband.attr('width', width);
+        rubberband.attr('height', height);
+    }
+
+    // Set the figure to an initial 600x600px, this will subsequently be updated
+    // upon first draw.
+    this._resize_canvas(600, 600);
+
+    // Disable right mouse context menu.
+    $(this.rubberband_canvas).bind("contextmenu",function(e){
+        return false;
+    });
+
+    function set_focus () {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+}
+
+mpl.figure.prototype._init_toolbar = function() {
+    var fig = this;
+
+    var nav_element = $('<div/>');
+    nav_element.attr('style', 'width: 100%');
+    this.root.append(nav_element);
+
+    // Define a callback function for later on.
+    function toolbar_event(event) {
+        return fig.toolbar_button_onclick(event['data']);
+    }
+    function toolbar_mouse_event(event) {
+        return fig.toolbar_button_onmouseover(event['data']);
+    }
+
+    for(var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            // put a spacer in here.
+            continue;
+        }
+        var button = $('<button/>');
+        button.addClass('ui-button ui-widget ui-state-default ui-corner-all ' +
+                        'ui-button-icon-only');
+        button.attr('role', 'button');
+        button.attr('aria-disabled', 'false');
+        button.click(method_name, toolbar_event);
+        button.mouseover(tooltip, toolbar_mouse_event);
+
+        var icon_img = $('<span/>');
+        icon_img.addClass('ui-button-icon-primary ui-icon');
+        icon_img.addClass(image);
+        icon_img.addClass('ui-corner-all');
+
+        var tooltip_span = $('<span/>');
+        tooltip_span.addClass('ui-button-text');
+        tooltip_span.html(tooltip);
+
+        button.append(icon_img);
+        button.append(tooltip_span);
+
+        nav_element.append(button);
+    }
+
+    var fmt_picker_span = $('<span/>');
+
+    var fmt_picker = $('<select/>');
+    fmt_picker.addClass('mpl-toolbar-option ui-widget ui-widget-content');
+    fmt_picker_span.append(fmt_picker);
+    nav_element.append(fmt_picker_span);
+    this.format_dropdown = fmt_picker[0];
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = $(
+            '<option/>', {selected: fmt === mpl.default_extension}).html(fmt);
+        fmt_picker.append(option);
+    }
+
+    // Add hover states to the ui-buttons
+    $( ".ui-button" ).hover(
+        function() { $(this).addClass("ui-state-hover");},
+        function() { $(this).removeClass("ui-state-hover");}
+    );
+
+    var status_bar = $('<span class="mpl-message"/>');
+    nav_element.append(status_bar);
+    this.message = status_bar[0];
+}
+
+mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', {'width': x_pixels, 'height': y_pixels});
+}
+
+mpl.figure.prototype.send_message = function(type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+}
+
+mpl.figure.prototype.send_draw_message = function() {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
+    }
+}
+
+
+mpl.figure.prototype.handle_save = function(fig, msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+}
+
+
+mpl.figure.prototype.handle_resize = function(fig, msg) {
+    var size = msg['size'];
+    if (size[0] != fig.canvas.width || size[1] != fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1]);
+        fig.send_message("refresh", {});
+    };
+}
+
+mpl.figure.prototype.handle_rubberband = function(fig, msg) {
+    var x0 = msg['x0'] / mpl.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / mpl.ratio;
+    var x1 = msg['x1'] / mpl.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / mpl.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0, 0, fig.canvas.width / mpl.ratio, fig.canvas.height / mpl.ratio);
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+}
+
+mpl.figure.prototype.handle_figure_label = function(fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+}
+
+mpl.figure.prototype.handle_cursor = function(fig, msg) {
+    var cursor = msg['cursor'];
+    switch(cursor)
+    {
+    case 0:
+        cursor = 'pointer';
+        break;
+    case 1:
+        cursor = 'default';
+        break;
+    case 2:
+        cursor = 'crosshair';
+        break;
+    case 3:
+        cursor = 'move';
+        break;
+    }
+    fig.rubberband_canvas.style.cursor = cursor;
+}
+
+mpl.figure.prototype.handle_message = function(fig, msg) {
+    fig.message.textContent = msg['message'];
+}
+
+mpl.figure.prototype.handle_draw = function(fig, msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+}
+
+mpl.figure.prototype.handle_image_mode = function(fig, msg) {
+    fig.image_mode = msg['mode'];
+}
+
+mpl.figure.prototype.updated_canvas_event = function() {
+    // Called whenever the canvas gets updated.
+    this.send_message("ack", {});
+}
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function(fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
+             * to be part of the websocket stream */
+            evt.data.type = "image/png";
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src);
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                evt.data);
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+        else if (typeof evt.data === 'string' && evt.data.slice(0, 21) == "data:image/png;base64") {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig["handle_" + msg_type];
+        } catch (e) {
+            console.log("No handler for the '" + msg_type + "' message type: ", msg);
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log("Exception inside the 'handler_" + msg_type + "' callback:", e, e.stack, msg);
+            }
+        }
+    };
+}
+
+// from http://stackoverflow.com/questions/1114465/getting-mouse-location-in-canvas
+mpl.findpos = function(e) {
+    //this section is from http://www.quirksmode.org/js/events_properties.html
+    var targ;
+    if (!e)
+        e = window.event;
+    if (e.target)
+        targ = e.target;
+    else if (e.srcElement)
+        targ = e.srcElement;
+    if (targ.nodeType == 3) // defeat Safari bug
+        targ = targ.parentNode;
+
+    // jQuery normalizes the pageX and pageY
+    // pageX,Y are the mouse positions relative to the document
+    // offset() returns the position of the element relative to the document
+    var x = e.pageX - $(targ).offset().left;
+    var y = e.pageY - $(targ).offset().top;
+
+    return {"x": x, "y": y};
+};
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * http://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys (original) {
+  return Object.keys(original).reduce(function (obj, key) {
+    if (typeof original[key] !== 'object')
+        obj[key] = original[key]
+    return obj;
+  }, {});
+}
+
+mpl.figure.prototype.mouse_event = function(event, name) {
+    var canvas_pos = mpl.findpos(event)
+
+    if (name === 'button_press')
+    {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    var x = canvas_pos.x * mpl.ratio;
+    var y = canvas_pos.y * mpl.ratio;
+
+    this.send_message(name, {x: x, y: y, button: event.button,
+                             step: event.step,
+                             guiEvent: simpleKeys(event)});
+
+    /* This prevents the web browser from automatically changing to
+     * the text insertion cursor when the button is pressed.  We want
+     * to control all of the cursor setting manually through the
+     * 'cursor' event from matplotlib */
+    event.preventDefault();
+    return false;
+}
+
+mpl.figure.prototype._key_event_extra = function(event, name) {
+    // Handle any extra behaviour associated with a key event
+}
+
+mpl.figure.prototype.key_event = function(event, name) {
+
+    // Prevent repeat events
+    if (name == 'key_press')
+    {
+        if (event.which === this._key)
+            return;
+        else
+            this._key = event.which;
+    }
+    if (name == 'key_release')
+        this._key = null;
+
+    var value = '';
+    if (event.ctrlKey && event.which != 17)
+        value += "ctrl+";
+    if (event.altKey && event.which != 18)
+        value += "alt+";
+    if (event.shiftKey && event.which != 16)
+        value += "shift+";
+
+    value += 'k';
+    value += event.which.toString();
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, {key: value,
+                             guiEvent: simpleKeys(event)});
+    return false;
+}
+
+mpl.figure.prototype.toolbar_button_onclick = function(name) {
+    if (name == 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message("toolbar_button", {name: name});
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function(tooltip) {
+    this.message.textContent = tooltip;
+};
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home icon-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left icon-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right icon-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Pan axes with left mouse, zoom with right", "fa fa-arrows icon-move", "pan"], ["Zoom", "Zoom to rectangle", "fa fa-square-o icon-check-empty", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o icon-save", "download"]];
+
+mpl.extensions = ["eps", "pdf", "png", "ps", "raw", "svg"];
+
+mpl.default_extension = "png";var comm_websocket_adapter = function(comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.close = function() {
+        comm.close()
+    };
+    ws.send = function(m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function(msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        // Pass the mpl event to the overridden (by mpl) onmessage function.
+        ws.onmessage(msg['content']['data'])
+    });
+    return ws;
+}
+
+mpl.mpl_figure_comm = function(comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = $("#" + id);
+    var ws_proxy = comm_websocket_adapter(comm)
+
+    function ondownload(figure, format) {
+        window.open(figure.imageObj.src);
+    }
+
+    var fig = new mpl.figure(id, ws_proxy,
+                           ondownload,
+                           element.get(0));
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element.get(0);
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error("Failed to find cell for figure", id, fig);
+        return;
+    }
+
+    var output_index = fig.cell_info[2]
+    var cell = fig.cell_info[0];
+
+};
+
+mpl.figure.prototype.handle_close = function(fig, msg) {
+    var width = fig.canvas.width/mpl.ratio
+    fig.root.unbind('remove')
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable()
+    $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
+    fig.close_ws(fig, msg);
+}
+
+mpl.figure.prototype.close_ws = function(fig, msg){
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+}
+
+mpl.figure.prototype.push_to_output = function(remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width/mpl.ratio
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] = '<img src="' + dataURL + '" width="' + width + '">';
+}
+
+mpl.figure.prototype.updated_canvas_event = function() {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message("ack", {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () { fig.push_to_output() }, 1000);
+}
+
+mpl.figure.prototype._init_toolbar = function() {
+    var fig = this;
+
+    var nav_element = $('<div/>');
+    nav_element.attr('style', 'width: 100%');
+    this.root.append(nav_element);
+
+    // Define a callback function for later on.
+    function toolbar_event(event) {
+        return fig.toolbar_button_onclick(event['data']);
+    }
+    function toolbar_mouse_event(event) {
+        return fig.toolbar_button_onmouseover(event['data']);
+    }
+
+    for(var toolbar_ind in mpl.toolbar_items){
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) { continue; };
+
+        var button = $('<button class="btn btn-default" href="#" title="' + name + '"><i class="fa ' + image + ' fa-lg"></i></button>');
+        button.click(method_name, toolbar_event);
+        button.mouseover(tooltip, toolbar_mouse_event);
+        nav_element.append(button);
+    }
+
+    // Add the status bar.
+    var status_bar = $('<span class="mpl-message" style="text-align:right; float: right;"/>');
+    nav_element.append(status_bar);
+    this.message = status_bar[0];
+
+    // Add the close button to the window.
+    var buttongrp = $('<div class="btn-group inline pull-right"></div>');
+    var button = $('<button class="btn btn-mini btn-primary" href="#" title="Stop Interaction"><i class="fa fa-power-off icon-remove icon-large"></i></button>');
+    button.click(function (evt) { fig.handle_close(fig, {}); } );
+    button.mouseover('Stop Interaction', toolbar_mouse_event);
+    buttongrp.append(button);
+    var titlebar = this.root.find($('.ui-dialog-titlebar'));
+    titlebar.prepend(buttongrp);
+}
+
+mpl.figure.prototype._root_extra_style = function(el){
+    var fig = this
+    el.on("remove", function(){
+	fig.close_ws(fig, {});
+    });
+}
+
+mpl.figure.prototype._canvas_extra_style = function(el){
+    // this is important to make the div 'focusable
+    el.attr('tabindex', 0)
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    }
+    else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+
+}
+
+mpl.figure.prototype._key_event_extra = function(event, name) {
+    var manager = IPython.notebook.keyboard_manager;
+    if (!manager)
+        manager = IPython.keyboard_manager;
+
+    // Check for shift+enter
+    if (event.shiftKey && event.which == 13) {
+        this.canvas_div.blur();
+        // select the cell after this one
+        var index = IPython.notebook.find_cell_index(this.cell_info[0]);
+        IPython.notebook.select(index + 1);
+    }
+}
+
+mpl.figure.prototype.handle_save = function(fig, msg) {
+    fig.ondownload(fig, null);
+}
+
+
+mpl.find_output_cell = function(html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i=0; i<ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code'){
+            for (var j=0; j<cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] == html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+}
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel != null) {
+    IPython.notebook.kernel.comm_manager.register_target('matplotlib', mpl.mpl_figure_comm);
+}
+</script><div class="output text_html"><div id='dc563db2-13a6-40ba-b440-2e4495629c42'></div></div></div>
+</div>
+<p>From this we can read that there will be a current into the cell as long as the membrane potential is below 66.5 and for larger values there will be a very small current out of the cell. The same experiment for the potassium current is displayed below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8314.47</span> <span class="c1"># J*mole**-1*K**-1&quot;</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">310</span> <span class="c1"># K</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">96485.3415</span> <span class="c1"># C*mM**-1</span>
+
+<span class="n">K_i</span> <span class="o">=</span> <span class="mf">138.3</span> <span class="c1"># mM</span>
+<span class="n">K_e</span> <span class="o">=</span> <span class="mf">5.4</span> <span class="c1"># mM</span>
+
+<span class="n">z_K</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Set this to one - it will only scale the current anyway</span>
+<span class="n">P_K</span> <span class="o">=</span> <span class="mf">1e-6</span> <span class="c1">#</span>
+
+<span class="c1"># Select membrane potential between -85 and 50 mV</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="n">i_K</span> <span class="o">=</span> <span class="n">P_K</span> <span class="o">*</span> <span class="p">(((</span><span class="n">z_K</span> <span class="o">*</span> <span class="n">F</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="p">((</span><span class="n">K_i</span> <span class="o">-</span> <span class="n">K_e</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">z_K</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="n">F</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">z_K</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="n">F</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">))))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">i_K</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Membrane potential (mV)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Potassium current density (uA/cm^2)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">/* Put everything inside the global mpl namespace */
+window.mpl = {};
+
+
+mpl.get_websocket_type = function() {
+    if (typeof(WebSocket) !== 'undefined') {
+        return WebSocket;
+    } else if (typeof(MozWebSocket) !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert('Your browser does not have WebSocket support. ' +
+              'Please try Chrome, Safari or Firefox ≥ 6. ' +
+              'Firefox 4 and 5 are also supported but you ' +
+              'have to enable WebSockets in about:config.');
+    };
+}
+
+mpl.figure = function(figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = (this.ws.binaryType != undefined);
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById("mpl-warnings");
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent = (
+                "This browser does not support binary websocket messages. " +
+                    "Performance may be slow.");
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = $('<div/>');
+    this._root_extra_style(this.root)
+    this.root.attr('style', 'display: inline-block');
+
+    $(parent_element).append(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen =  function () {
+            fig.send_message("supports_binary", {value: fig.supports_binary});
+            fig.send_message("send_image_mode", {});
+            if (mpl.ratio != 1) {
+                fig.send_message("set_dpi_ratio", {'dpi_ratio': mpl.ratio});
+            }
+            fig.send_message("refresh", {});
+        }
+
+    this.imageObj.onload = function() {
+            if (fig.image_mode == 'full') {
+                // Full images could contain transparency (where diff images
+                // almost always do), so we need to clear the canvas so that
+                // there is no ghosting.
+                fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+            }
+            fig.context.drawImage(fig.imageObj, 0, 0);
+        };
+
+    this.imageObj.onunload = function() {
+        fig.ws.close();
+    }
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+}
+
+mpl.figure.prototype._init_header = function() {
+    var titlebar = $(
+        '<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ' +
+        'ui-helper-clearfix"/>');
+    var titletext = $(
+        '<div class="ui-dialog-title" style="width: 100%; ' +
+        'text-align: center; padding: 3px;"/>');
+    titlebar.append(titletext)
+    this.root.append(titlebar);
+    this.header = titletext[0];
+}
+
+
+
+mpl.figure.prototype._canvas_extra_style = function(canvas_div) {
+
+}
+
+
+mpl.figure.prototype._root_extra_style = function(canvas_div) {
+
+}
+
+mpl.figure.prototype._init_canvas = function() {
+    var fig = this;
+
+    var canvas_div = $('<div/>');
+
+    canvas_div.attr('style', 'position: relative; clear: both; outline: 0');
+
+    function canvas_keyboard_event(event) {
+        return fig.key_event(event, event['data']);
+    }
+
+    canvas_div.keydown('key_press', canvas_keyboard_event);
+    canvas_div.keyup('key_release', canvas_keyboard_event);
+    this.canvas_div = canvas_div
+    this._canvas_extra_style(canvas_div)
+    this.root.append(canvas_div);
+
+    var canvas = $('<canvas/>');
+    canvas.addClass('mpl-canvas');
+    canvas.attr('style', "left: 0; top: 0; z-index: 0; outline: 0")
+
+    this.canvas = canvas[0];
+    this.context = canvas[0].getContext("2d");
+
+    var backingStore = this.context.backingStorePixelRatio ||
+	this.context.webkitBackingStorePixelRatio ||
+	this.context.mozBackingStorePixelRatio ||
+	this.context.msBackingStorePixelRatio ||
+	this.context.oBackingStorePixelRatio ||
+	this.context.backingStorePixelRatio || 1;
+
+    mpl.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband = $('<canvas/>');
+    rubberband.attr('style', "position: absolute; left: 0; top: 0; z-index: 1;")
+
+    var pass_mouse_events = true;
+
+    canvas_div.resizable({
+        start: function(event, ui) {
+            pass_mouse_events = false;
+        },
+        resize: function(event, ui) {
+            fig.request_resize(ui.size.width, ui.size.height);
+        },
+        stop: function(event, ui) {
+            pass_mouse_events = true;
+            fig.request_resize(ui.size.width, ui.size.height);
+        },
+    });
+
+    function mouse_event_fn(event) {
+        if (pass_mouse_events)
+            return fig.mouse_event(event, event['data']);
+    }
+
+    rubberband.mousedown('button_press', mouse_event_fn);
+    rubberband.mouseup('button_release', mouse_event_fn);
+    // Throttle sequential mouse events to 1 every 20ms.
+    rubberband.mousemove('motion_notify', mouse_event_fn);
+
+    rubberband.mouseenter('figure_enter', mouse_event_fn);
+    rubberband.mouseleave('figure_leave', mouse_event_fn);
+
+    canvas_div.on("wheel", function (event) {
+        event = event.originalEvent;
+        event['data'] = 'scroll'
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        mouse_event_fn(event);
+    });
+
+    canvas_div.append(canvas);
+    canvas_div.append(rubberband);
+
+    this.rubberband = rubberband;
+    this.rubberband_canvas = rubberband[0];
+    this.rubberband_context = rubberband[0].getContext("2d");
+    this.rubberband_context.strokeStyle = "#000000";
+
+    this._resize_canvas = function(width, height) {
+        // Keep the size of the canvas, canvas container, and rubber band
+        // canvas in synch.
+        canvas_div.css('width', width)
+        canvas_div.css('height', height)
+
+        canvas.attr('width', width * mpl.ratio);
+        canvas.attr('height', height * mpl.ratio);
+        canvas.attr('style', 'width: ' + width + 'px; height: ' + height + 'px;');
+
+        rubberband.attr('width', width);
+        rubberband.attr('height', height);
+    }
+
+    // Set the figure to an initial 600x600px, this will subsequently be updated
+    // upon first draw.
+    this._resize_canvas(600, 600);
+
+    // Disable right mouse context menu.
+    $(this.rubberband_canvas).bind("contextmenu",function(e){
+        return false;
+    });
+
+    function set_focus () {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+}
+
+mpl.figure.prototype._init_toolbar = function() {
+    var fig = this;
+
+    var nav_element = $('<div/>');
+    nav_element.attr('style', 'width: 100%');
+    this.root.append(nav_element);
+
+    // Define a callback function for later on.
+    function toolbar_event(event) {
+        return fig.toolbar_button_onclick(event['data']);
+    }
+    function toolbar_mouse_event(event) {
+        return fig.toolbar_button_onmouseover(event['data']);
+    }
+
+    for(var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            // put a spacer in here.
+            continue;
+        }
+        var button = $('<button/>');
+        button.addClass('ui-button ui-widget ui-state-default ui-corner-all ' +
+                        'ui-button-icon-only');
+        button.attr('role', 'button');
+        button.attr('aria-disabled', 'false');
+        button.click(method_name, toolbar_event);
+        button.mouseover(tooltip, toolbar_mouse_event);
+
+        var icon_img = $('<span/>');
+        icon_img.addClass('ui-button-icon-primary ui-icon');
+        icon_img.addClass(image);
+        icon_img.addClass('ui-corner-all');
+
+        var tooltip_span = $('<span/>');
+        tooltip_span.addClass('ui-button-text');
+        tooltip_span.html(tooltip);
+
+        button.append(icon_img);
+        button.append(tooltip_span);
+
+        nav_element.append(button);
+    }
+
+    var fmt_picker_span = $('<span/>');
+
+    var fmt_picker = $('<select/>');
+    fmt_picker.addClass('mpl-toolbar-option ui-widget ui-widget-content');
+    fmt_picker_span.append(fmt_picker);
+    nav_element.append(fmt_picker_span);
+    this.format_dropdown = fmt_picker[0];
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = $(
+            '<option/>', {selected: fmt === mpl.default_extension}).html(fmt);
+        fmt_picker.append(option);
+    }
+
+    // Add hover states to the ui-buttons
+    $( ".ui-button" ).hover(
+        function() { $(this).addClass("ui-state-hover");},
+        function() { $(this).removeClass("ui-state-hover");}
+    );
+
+    var status_bar = $('<span class="mpl-message"/>');
+    nav_element.append(status_bar);
+    this.message = status_bar[0];
+}
+
+mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', {'width': x_pixels, 'height': y_pixels});
+}
+
+mpl.figure.prototype.send_message = function(type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+}
+
+mpl.figure.prototype.send_draw_message = function() {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
+    }
+}
+
+
+mpl.figure.prototype.handle_save = function(fig, msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+}
+
+
+mpl.figure.prototype.handle_resize = function(fig, msg) {
+    var size = msg['size'];
+    if (size[0] != fig.canvas.width || size[1] != fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1]);
+        fig.send_message("refresh", {});
+    };
+}
+
+mpl.figure.prototype.handle_rubberband = function(fig, msg) {
+    var x0 = msg['x0'] / mpl.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / mpl.ratio;
+    var x1 = msg['x1'] / mpl.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / mpl.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0, 0, fig.canvas.width / mpl.ratio, fig.canvas.height / mpl.ratio);
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+}
+
+mpl.figure.prototype.handle_figure_label = function(fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+}
+
+mpl.figure.prototype.handle_cursor = function(fig, msg) {
+    var cursor = msg['cursor'];
+    switch(cursor)
+    {
+    case 0:
+        cursor = 'pointer';
+        break;
+    case 1:
+        cursor = 'default';
+        break;
+    case 2:
+        cursor = 'crosshair';
+        break;
+    case 3:
+        cursor = 'move';
+        break;
+    }
+    fig.rubberband_canvas.style.cursor = cursor;
+}
+
+mpl.figure.prototype.handle_message = function(fig, msg) {
+    fig.message.textContent = msg['message'];
+}
+
+mpl.figure.prototype.handle_draw = function(fig, msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+}
+
+mpl.figure.prototype.handle_image_mode = function(fig, msg) {
+    fig.image_mode = msg['mode'];
+}
+
+mpl.figure.prototype.updated_canvas_event = function() {
+    // Called whenever the canvas gets updated.
+    this.send_message("ack", {});
+}
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function(fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
+             * to be part of the websocket stream */
+            evt.data.type = "image/png";
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src);
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                evt.data);
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+        else if (typeof evt.data === 'string' && evt.data.slice(0, 21) == "data:image/png;base64") {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig["handle_" + msg_type];
+        } catch (e) {
+            console.log("No handler for the '" + msg_type + "' message type: ", msg);
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log("Exception inside the 'handler_" + msg_type + "' callback:", e, e.stack, msg);
+            }
+        }
+    };
+}
+
+// from http://stackoverflow.com/questions/1114465/getting-mouse-location-in-canvas
+mpl.findpos = function(e) {
+    //this section is from http://www.quirksmode.org/js/events_properties.html
+    var targ;
+    if (!e)
+        e = window.event;
+    if (e.target)
+        targ = e.target;
+    else if (e.srcElement)
+        targ = e.srcElement;
+    if (targ.nodeType == 3) // defeat Safari bug
+        targ = targ.parentNode;
+
+    // jQuery normalizes the pageX and pageY
+    // pageX,Y are the mouse positions relative to the document
+    // offset() returns the position of the element relative to the document
+    var x = e.pageX - $(targ).offset().left;
+    var y = e.pageY - $(targ).offset().top;
+
+    return {"x": x, "y": y};
+};
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * http://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys (original) {
+  return Object.keys(original).reduce(function (obj, key) {
+    if (typeof original[key] !== 'object')
+        obj[key] = original[key]
+    return obj;
+  }, {});
+}
+
+mpl.figure.prototype.mouse_event = function(event, name) {
+    var canvas_pos = mpl.findpos(event)
+
+    if (name === 'button_press')
+    {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    var x = canvas_pos.x * mpl.ratio;
+    var y = canvas_pos.y * mpl.ratio;
+
+    this.send_message(name, {x: x, y: y, button: event.button,
+                             step: event.step,
+                             guiEvent: simpleKeys(event)});
+
+    /* This prevents the web browser from automatically changing to
+     * the text insertion cursor when the button is pressed.  We want
+     * to control all of the cursor setting manually through the
+     * 'cursor' event from matplotlib */
+    event.preventDefault();
+    return false;
+}
+
+mpl.figure.prototype._key_event_extra = function(event, name) {
+    // Handle any extra behaviour associated with a key event
+}
+
+mpl.figure.prototype.key_event = function(event, name) {
+
+    // Prevent repeat events
+    if (name == 'key_press')
+    {
+        if (event.which === this._key)
+            return;
+        else
+            this._key = event.which;
+    }
+    if (name == 'key_release')
+        this._key = null;
+
+    var value = '';
+    if (event.ctrlKey && event.which != 17)
+        value += "ctrl+";
+    if (event.altKey && event.which != 18)
+        value += "alt+";
+    if (event.shiftKey && event.which != 16)
+        value += "shift+";
+
+    value += 'k';
+    value += event.which.toString();
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, {key: value,
+                             guiEvent: simpleKeys(event)});
+    return false;
+}
+
+mpl.figure.prototype.toolbar_button_onclick = function(name) {
+    if (name == 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message("toolbar_button", {name: name});
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function(tooltip) {
+    this.message.textContent = tooltip;
+};
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home icon-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left icon-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right icon-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Pan axes with left mouse, zoom with right", "fa fa-arrows icon-move", "pan"], ["Zoom", "Zoom to rectangle", "fa fa-square-o icon-check-empty", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o icon-save", "download"]];
+
+mpl.extensions = ["eps", "pdf", "png", "ps", "raw", "svg"];
+
+mpl.default_extension = "png";var comm_websocket_adapter = function(comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.close = function() {
+        comm.close()
+    };
+    ws.send = function(m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function(msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        // Pass the mpl event to the overridden (by mpl) onmessage function.
+        ws.onmessage(msg['content']['data'])
+    });
+    return ws;
+}
+
+mpl.mpl_figure_comm = function(comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = $("#" + id);
+    var ws_proxy = comm_websocket_adapter(comm)
+
+    function ondownload(figure, format) {
+        window.open(figure.imageObj.src);
+    }
+
+    var fig = new mpl.figure(id, ws_proxy,
+                           ondownload,
+                           element.get(0));
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element.get(0);
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error("Failed to find cell for figure", id, fig);
+        return;
+    }
+
+    var output_index = fig.cell_info[2]
+    var cell = fig.cell_info[0];
+
+};
+
+mpl.figure.prototype.handle_close = function(fig, msg) {
+    var width = fig.canvas.width/mpl.ratio
+    fig.root.unbind('remove')
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable()
+    $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
+    fig.close_ws(fig, msg);
+}
+
+mpl.figure.prototype.close_ws = function(fig, msg){
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+}
+
+mpl.figure.prototype.push_to_output = function(remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width/mpl.ratio
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] = '<img src="' + dataURL + '" width="' + width + '">';
+}
+
+mpl.figure.prototype.updated_canvas_event = function() {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message("ack", {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () { fig.push_to_output() }, 1000);
+}
+
+mpl.figure.prototype._init_toolbar = function() {
+    var fig = this;
+
+    var nav_element = $('<div/>');
+    nav_element.attr('style', 'width: 100%');
+    this.root.append(nav_element);
+
+    // Define a callback function for later on.
+    function toolbar_event(event) {
+        return fig.toolbar_button_onclick(event['data']);
+    }
+    function toolbar_mouse_event(event) {
+        return fig.toolbar_button_onmouseover(event['data']);
+    }
+
+    for(var toolbar_ind in mpl.toolbar_items){
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) { continue; };
+
+        var button = $('<button class="btn btn-default" href="#" title="' + name + '"><i class="fa ' + image + ' fa-lg"></i></button>');
+        button.click(method_name, toolbar_event);
+        button.mouseover(tooltip, toolbar_mouse_event);
+        nav_element.append(button);
+    }
+
+    // Add the status bar.
+    var status_bar = $('<span class="mpl-message" style="text-align:right; float: right;"/>');
+    nav_element.append(status_bar);
+    this.message = status_bar[0];
+
+    // Add the close button to the window.
+    var buttongrp = $('<div class="btn-group inline pull-right"></div>');
+    var button = $('<button class="btn btn-mini btn-primary" href="#" title="Stop Interaction"><i class="fa fa-power-off icon-remove icon-large"></i></button>');
+    button.click(function (evt) { fig.handle_close(fig, {}); } );
+    button.mouseover('Stop Interaction', toolbar_mouse_event);
+    buttongrp.append(button);
+    var titlebar = this.root.find($('.ui-dialog-titlebar'));
+    titlebar.prepend(buttongrp);
+}
+
+mpl.figure.prototype._root_extra_style = function(el){
+    var fig = this
+    el.on("remove", function(){
+	fig.close_ws(fig, {});
+    });
+}
+
+mpl.figure.prototype._canvas_extra_style = function(el){
+    // this is important to make the div 'focusable
+    el.attr('tabindex', 0)
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    }
+    else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+
+}
+
+mpl.figure.prototype._key_event_extra = function(event, name) {
+    var manager = IPython.notebook.keyboard_manager;
+    if (!manager)
+        manager = IPython.keyboard_manager;
+
+    // Check for shift+enter
+    if (event.shiftKey && event.which == 13) {
+        this.canvas_div.blur();
+        // select the cell after this one
+        var index = IPython.notebook.find_cell_index(this.cell_info[0]);
+        IPython.notebook.select(index + 1);
+    }
+}
+
+mpl.figure.prototype.handle_save = function(fig, msg) {
+    fig.ondownload(fig, null);
+}
+
+
+mpl.find_output_cell = function(html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i=0; i<ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code'){
+            for (var j=0; j<cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] == html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+}
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel != null) {
+    IPython.notebook.kernel.comm_manager.register_target('matplotlib', mpl.mpl_figure_comm);
+}
+</script><div class="output text_html"><div id='32de8622-466f-4a82-b697-44a0706c782a'></div></div></div>
+</div>
+<p>As we said earlier, there are usually more ions that are separated by the same membrane. For example say that we have sodium (Na<span class="math notranslate nohighlight">\(^{+}\)</span>), potassium (K<span class="math notranslate nohighlight">\(^{+}\)</span>) and cloride (Cl<span class="math notranslate nohighlight">\(^{-}\)</span>). Then the total current denity would be</p>
+<div class="math notranslate nohighlight">
+\[i = i_{Na} + i_K + i_{Cl}.\]</div>
+<p>We can now try to find the membrane potential needed to have a net zero current.</p>
+<div class="math notranslate nohighlight">
+\[0 = i_{Na} + i_K + i_{Cl} = \frac{F^2}{RT}V \left( 
+P_{Na}\frac{[Na]_i - [Na]_e \exp \left( -\frac{VF}{RT} \right)}{1- \exp \left( -\frac{VF}{RT} \right)} + 
+P_{K}\frac{[K]_i - [K]_e \exp \left( -\frac{VF}{RT} \right)}{1- \exp \left( -\frac{VF}{RT} \right)} + 
+P_{Cl}\frac{[Cl]_i - [Cl]_e \exp \left( +\frac{VF}{RT} \right)}{1- \exp \left( +\frac{VF}{RT} \right)}
+\right)\]</div>
+<p>(note the sign change in the exponential for Cl<span class="math notranslate nohighlight">\(^{-}\)</span>). This means that</p>
+<div class="math notranslate nohighlight">
+\[  
+P_{Na}\frac{[Na]_i - [Na]_e \exp \left( -\frac{VF}{RT} \right)}{1- \exp \left( -\frac{VF}{RT} \right)} + 
+P_{K}\frac{[K]_i - [K]_e \exp \left( -\frac{VF}{RT} \right)}{1- \exp \left( -\frac{VF}{RT} \right)} + 
+P_{Cl}\frac{[Cl]_i - [Cl]_e \exp \left( +\frac{VF}{RT} \right)}{1- \exp \left( +\frac{VF}{RT} \right)} = 0\]</div>
+<p>We collect the terms and take the natural logatrithm to obtain</p>
+<div class="math notranslate nohighlight">
+\[ V = -\frac{RT}{F} \ln \left( \frac{P_{Na}[Na]_i + P_{K}[K]_i + P_{Cl}[Cl]_e}{P_{Na}[Na]_e + P_{K}[K]_e + P_{Cl}[Cl]_i} \right).\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8314.47</span> <span class="c1"># J*mole**-1*K**-1&quot;</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">310</span> <span class="c1"># K</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">96485.3415</span> <span class="c1"># C*mM**-1</span>
+
+<span class="c1"># These values are taken from the TenTussher 2006 model for Human Ventricular Tissue</span>
+<span class="n">P_Na</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">Na_i</span> <span class="o">=</span> <span class="mf">11.6</span> <span class="c1"># mM</span>
+<span class="n">Na_e</span> <span class="o">=</span> <span class="mf">140.0</span> <span class="c1"># mM</span>
+<span class="n">E_Na</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">F</span><span class="p">))</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="n">Na_e</span> <span class="o">/</span> <span class="n">Na_i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Resting potential for Na^+: </span><span class="si">{</span><span class="n">E_Na</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mV&quot;</span><span class="p">)</span>
+
+<span class="n">P_K</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">K_i</span> <span class="o">=</span> <span class="mf">138.3</span> <span class="c1"># mM</span>
+<span class="n">K_e</span> <span class="o">=</span> <span class="mf">5.4</span> <span class="c1"># mM</span>
+<span class="n">E_K</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">F</span><span class="p">))</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="n">K_e</span> <span class="o">/</span> <span class="n">K_i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Resting potential for K^+: </span><span class="si">{</span><span class="n">E_K</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mV&quot;</span><span class="p">)</span>
+
+<span class="c1"># Total</span>
+<span class="n">V_rest</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">F</span><span class="p">))</span> <span class="o">*</span> <span class="n">log</span><span class="p">((</span><span class="n">P_Na</span> <span class="o">*</span> <span class="n">Na_i</span> <span class="o">+</span> <span class="n">P_K</span> <span class="o">*</span> <span class="n">K_i</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">P_Na</span> <span class="o">*</span> <span class="n">Na_e</span> <span class="o">+</span> <span class="n">P_K</span> <span class="o">*</span> <span class="n">K_e</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total resting potential is </span><span class="si">{</span><span class="n">V_rest</span><span class="si">}</span><span class="s2"> mV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Resting potential for Na^+: 66.53 mV
+Resting potential for K^+: -86.63 mV
+Total resting potential is -0.8142309550910197 mV
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="heart_cell.html" title="previous page">Introducing the heart cells</a>
+    <a class='right-next' id="next-link" href="python_model.html" title="next page">&lt;no title&gt;</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Henrik Finsberg<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

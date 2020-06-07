@@ -1,0 +1,1086 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The CellML model repository &#8212; Heart cells in Action</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="L-type Ca channel" href="Cav12.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="python_model.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Heart cells in Action</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="README.html">Heart Cells in Action</a>
+  </li>
+  <li class="">
+    <a href="index.html">Cellmodel tutorials</a>
+  </li>
+  <li class="">
+    <a href="heart_cell.html">Introducing the heart cells</a>
+  </li>
+  <li class="">
+    <a href="action_potential.html">The action potential</a>
+  </li>
+  <li class="active">
+    <a href="">The CellML model repository</a>
+  </li>
+  <li class="">
+    <a href="Cav12.html">L-type Ca channel</a>
+  </li>
+  <li class="">
+    <a href="Kir21.html">hERG channel</a>
+  </li>
+  <li class="">
+    <a href="Kv43.html">hERG channel</a>
+  </li>
+  <li class="">
+    <a href="KvLQT1.html">hERG channel</a>
+  </li>
+  <li class="">
+    <a href="Nav15.html">hERG channel</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/cellml.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+            <div class="dropdown-buttons sourcebuttons">
+                <a class="repository-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
+                <a class="issues-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action/issues/new?title=Issue%20on%20page%20%2Fcellml.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                <a class="edit-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action/edit/master/./cellml.ipynb"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+            </div>
+        </div>
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ComputationalPhysiology/heart_cells_in_action/master?urlpath=tree/./cellml.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/ComputationalPhysiology/heart_cells_in_action/edit/master/./cellml.ipynb">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="the-cellml-model-repository">
+<h1>The CellML model repository<a class="headerlink" href="#the-cellml-model-repository" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://www.cellml.org">CellML project</a> is a project which aims to collect and standardize models in an XML markup language. A complete list of all the models available at this site can be fount at https://models.physiomeproject.org/workspace.</p>
+<p>For the purpose of this tutorail we have written a small utility script which allows for automatically downloading and generating gotran <code class="docutils literal notranslate"><span class="pre">ode</span></code> files from a cellml model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">utils</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create an instance of a <code class="docutils literal notranslate"><span class="pre">CellML</span></code> class which will scrape the cellml model repository and collect all the available models</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">CellML</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;severi_fantini_charawi_difrancesco_2012&#39;,
+ &#39;A 0D model of the Heart&#39;,
+ &#39;A Bifurcation Analysis of Two Coupled Calcium Oscillators, Bindschadler and Sneyd 2001&#39;,
+ &#39;A computational model of the human left-ventricular epicardial myocyte, Iyer, Mazhari, Winslow, 2004&#39;,
+ &#39;A mathematical model of rat distal convoluted tubule. I. Cotransporter function in early DCT.&#39;,
+ &#39;A mathematical model of the outer medullary collecting duct of the rat, A.M. Weinstein, 2000&#39;,
+ &#39;A model for pacemaking in substantia nigra neurons (A simple model based on a spherical geometry)&#39;,
+ &#39;A Model of Cardiac Electrical Activity Incorporating Ionic Pumps and Concentration Changes, DiFrancesco, Noble, 1985&#39;,
+ &#39;A model of intracellular pH control&#39;,
+ &#39;A Primer on Modular Mass Action Modelling with CellML&#39;,
+ &#39;A review of cardiac cellular electrophysiology models&#39;,
+ &#39;A Simplified Local Control Model of Calcium-Induced Calcium Release in Cardiac Ventricular Myocytes, Hinch, Greenstein, Tanskanen, Xu, Winslow, 2004&#39;,
+ &#39;A single compartment model of pacemaking in dissasociated Substantia nigra neurons with hyperbolic tetrahedral geometry&#39;,
+ &#39;A Thermodynamic Model of the Cardiac Sarcoplasmic/Endoplasmic Ca(2+) (SERCA) Pump, Kenneth Tran, Nicolas P. Smith, Denis S. Loiselle, and Edmund J. Crampin, 2009&#39;,
+ &#39;ABI Comfort Simulator&#39;,
+ &#39;Acid-Base Physiology&#39;,
+ &#39;Activation of spaK&#39;,
+ &#39;Activation of spaR&#39;,
+ &#39;Activation of the Liver Glycogen Phosphorylase by Ca2+ Oscillations:  a Theoretical Study&#39;,
+ &#39;Adrian, Chandler, Hodgkin, 1970&#39;,
+ &#39;Aguda, B, 1999&#39;,
+ &#39;Aguda, Tang, 1999&#39;,
+ &#39;Al Abed, Guo, Lovell, Dokos, 2013 (Generic Cardiac Ionic Models)&#39;,
+ &#39;Albert, Haanstra, Hannaert, Van Roy, Opperdoes, Bakker and Michels, 2005&#39;,
+ &#39;Albrecht, Colegrove, Friel, 2002&#39;,
+ &#39;Albrecht, Colegrove, Hongpaisan, Pivovarova, Andrews, Friel, 2001&#39;,
+ &#39;Alexander and Wahl 2010&#39;,
+ &#39;Aliev &amp; Panfilov (1996)&#39;,
+ &#39;An encoding of the human ORd model by Steve Neiderer&#39;,
+ &#39;An integrative dynamic model of brain energy metabolism using in vivo neurochemical measurements&#39;,
+ &#39;An integrative dynamic model of brain energy metabolism using in vivo neurochemical measurements, Mathieu Cloutier, Fiachra B. Bolger, John P. Lowry and Peter Wellstead, 2009&#39;,
+ &quot;Andre&#39;s Hodgkin Huxley model&quot;,
+ &#39;Anion Exchanger&#39;,
+ &#39;Annotation for a Symmetric Stomach Surface&#39;,
+ &#39;Annotation for Human Stomach Surface&#39;,
+ &#39;Aon, Cortassa, 2002&#39;,
+ &#39;Approximating Sine Waves&#39;,
+ &#39;Arresting the mitotic oscillator and the control of cell proliferation: insights from a cascade model for cdc2 kinase activation &#39;,
+ &#39;Aslanidi 2009&#39;,
+ &#39;Aslanidi Atrial Model 2009&#39;,
+ &#39;Aslanidi_etal_2010&#39;,
+ &#39;Asthagiri, Lauffenburger, 2001&#39;,
+ &#39;Atrial fibroblast model&#39;,
+ &#39;Bacillus Chassis&#39;,
+ &#39;Bagci 2006&#39;,
+ &#39;Bagci 2008&#39;,
+ &#39;Bakker, Mensonides, Teusink, Vanhoek, Michels, Westerhoff, 2000&#39;,
+ &#39;Bakker, Michels, Opperdoes, Westerhoff, 1997&#39;,
+ &#39;Barberis, Klipp, Vanoni, Alberghina, 2007&#39;,
+ &#39;Basket Catheter Emulator&#39;,
+ &#39;Baylor, Hollingworth, Chandler, 2002&#39;,
+ &#39;Beard, 2005&#39;,
+ &#39;Beeler, Reuter, 1977&#39;,
+ &#39;Beeler, Reuter, 1977 uncertainty example&#39;,
+ &#39;Benson 2008&#39;,
+ &#39;Bental, 2006&#39;,
+ &#39;Bernus, Wilders, Zemlin, Verschelde, Panfilov, 2002&#39;,
+ &#39;Bertram, Arnot, Zamponi, 2002&#39;,
+ &#39;Bertram, Pedersen, Luciani and Sherman 2006&#39;,
+ &#39;Bertram, Previte, Sherman, Kinard, Satin, 2000&#39;,
+ &#39;Bertram, Rhoads and Cimbora 2008&#39;,
+ &#39;Bertram, Satin, Pedersen, Luciani, Sherman, 2007&#39;,
+ &#39;Bertram, Satin, Zhang, Smolen, Sherman, 2004&#39;,
+ &#39;Bertram, Sherman, 2004&#39;,
+ &#39;Bertram, Smolen, Sherman, Mears, Atwater, Martin, Soria, 1995&#39;,
+ &#39;Best Practice 1.0 and 1.1 Model Diagrams&#39;,
+ &#39;BG Mica models&#39;,
+ &#39;Bhalla, Iyengar, 1999&#39;,
+ &#39;Bifurcation analysis of the regulatory modules of the mammalian G1/S transition&#39;,
+ &#39;Bindschadler, Sneyd, 2001&#39;,
+ &#39;Bingzheng, Zhenye, Liansong, 1990&#39;,
+ &#39;Biophysical Characteristics of the Pig Kidney Na/Glucose Cotransporter SGLT2 Reveal a Common Mechanism for SGLT1 and SGLT2, Mackenzie, Loo, Panayotova-Heiermann and Wright, 1996&#39;,
+ &#39;Body flatmap&#39;,
+ &#39;Bondarenko, Szigeti, Bett, Kim, Rasmusson, 2004&#39;,
+ &#39;BondGraph Basic&#39;,
+ &#39;Bonhoeffer, Rembiszewski, Ortiz, Nixon, 2000&#39;,
+ &#39;Borghans 1997&#39;,
+ &#39;Bornheimer et al. 2004&#39;,
+ &#39;Boyett, Zhang, Garny, Holden, 2001&#39;,
+ &#39;Brightman, Fell, 2000&#39;,
+ &#39;Brown, Choe, Shanahan, Czeisler, 1997&#39;,
+ &#39;Bueno, 2007&#39;,
+ &#39;Bugbuster Promoter 1&#39;,
+ &#39;Bugbuster Promoter 2&#39;,
+ &#39;Bugbuster Standard Virtual Biological Machine&#39;,
+ &#39;Bugenhagen 2010&#39;,
+ &#39;Butera, Rinzel, Smith II 1999&#39;,
+ &#39;Butera, Rinzel, Smith, 1999&#39;,
+ &#39;Calzone, Thieffry, Tyson, Novak, 2007&#39;,
+ &#39;Campbell, Chandra, 2006&#39;,
+ &#39;Cardiovascular Circulation&#39;,
+ &#39;Cardiovascular Circulation DVad&#39;,
+ &#39;Cardiovascular Circulation IVad&#39;,
+ &#39;Cardiovascular Circulation Systemic&#39;,
+ &#39;Cardiovascular Circulation Westkessel&#39;,
+ &#39;Cardiovascular Circulation Windkessel&#39;,
+ &#39;Carro, Rodriguez, Laguna, Pueyo (2011)&#39;,
+ &#39;Cartwright, Husain, 1986&#39;,
+ &#39;Cell viability models for tissue exposed to thermal ablation temperatures.&#39;,
+ &#39;CellML 2.0 testing&#39;,
+ &#39;CFTR&#39;,
+ &#39;Chang, Fujita, 1999&#39;,
+ &#39;Chang, Fujita, 2001&#39;,
+ &#39;Chang, Fujita, B, 1999&#39;,
+ &#39;Chassagnole, Rais, Quentin, Fell, Mazat, 2001&#39;,
+ &#39;Chauhan, Legewie, Westermark, Lorenzen and Herzel, 2008&#39;,
+ &#39;Chay, 1997&#39;,
+ &#39;Chay, Lee, Fan, 1995&#39;,
+ &#39;Chen, Calzone, Csikasznagy, Cross, Novak, Tyson, 2004&#39;,
+ &#39;Chen, Csikasz-Nagy, Gyorffy, Val, Novak, Tyson, 2000&#39;,
+ &#39;Chen, Popel, 2006&#39;,
+ &#39;Chen, Popel, 2007&#39;,
+ &#39;Cheng, Brown, Loeb, 2000&#39;,
+ &#39;Ciliberto, Novak, Tyson, 2003&#39;,
+ &#39;Ciliberto, Petrus, Tyson, Sible, 2003&#39;,
+ &#39;Ciliberto, Tyson, 2000&#39;,
+ &#39;Clancy, Rudy, 2001&#39;,
+ &#39;Clancy, Rudy, 2002&#39;,
+ &#39;Cloutier 2009&#39;,
+ &#39;Cloutier Wellstead 2009&#39;,
+ &#39;CMISS active contraction models&#39;,
+ &#39;Colegrove, Albrecht, Friel, 2000&#39;,
+ &#39;Combine Archive Example&#39;,
+ &#39;Computational analysis of the human sinus node action potential: model development and effects of mutations&#39;,
+ &#39;Conradie, Bruggeman, Ciliberto, Csikasz-Nagy, Novak, Westerhoff and Snoep, 2010&#39;,
+ &#39;Cooling, Hunter, Crampin, 2007&#39;,
+ &#39;Cooling, Hunter, Crampin, 2009&#39;,
+ &#39;Cooling, Hunter, Crampin, Cellml, 2008&#39;,
+ &#39;Core Domains Principled Model Example&#39;,
+ &#39;Corrias, Buist, 2007&#39;,
+ &#39;Corrias, Buist, 2008&#39;,
+ &#39;Cortassa et al (2006) ECME model&#39;,
+ &#39;Cortassa, Aon, Marban, Winslow, Orourke, 2003&#39;,
+ &#39;Cortassa, Aon, Winslow, Orourke, 2004&#39;,
+ &#39;Costa, Holmes, Mcculloch, 2001&#39;,
+ &#39;Courtemanche, Ramirez, Nattel, 1998&#39;,
+ &#39;Covering a Broad Dynamic Range: Information Processing at the  Erythropoietin Receptor &#39;,
+ &#39;Cronwright, Rohwer, Prior, 2002&#39;,
+ &#39;Csilkasz-Nagy 2006&#39;,
+ &#39;Cui, Kaandorp, 2006&#39;,
+ &#39;Cui, Kaandorp, 2008&#39;,
+ &#39;Cui, Kaandorp, Lloyd, 2008&#39;,
+ &#39;Curien, Ravanel, Dumas, 2003&#39;,
+ &#39;Dash, Bassingthwaighte, 2004&#39;,
+ &#39;David Cumin PhD Model&#39;,
+ &#39;Davies isAP 2012&#39;,
+ &#39;Dawson, Lea, Irvine, 2003&#39;,
+ &#39;Decker 2009&#39;,
+ &#39;Deforming Heart&#39;,
+ &#39;Degradation of Bugbuster RNA 1&#39;,
+ &#39;Degradation of Bugbuster RNA 2&#39;,
+ &#39;Degradation of ElectrEcoBlu RNA 1&#39;,
+ &#39;Degradation of ElectrEcoBlu RNA 2&#39;,
+ &#39;Degradation of GFP&#39;,
+ &#39;Degradation of IC&#39;,
+ &#39;Degradation of PhzM&#39;,
+ &#39;Degradation of PhzS&#39;,
+ &#39;Degradation of PYO&#39;,
+ &#39;Degradation of spaK&#39;,
+ &#39;Degradation of spaKactive &#39;,
+ &#39;Degradation of spaR&#39;,
+ &#39;Degradation of spaRactive&#39;,
+ &#39;Degradation of TF&#39;,
+ &#39;Degradation of TFS&#39;,
+ &#39;Delta-Notch Intercellular Signalling&#39;,
+ &#39;Demir, Clark, Giles, 1999&#39;,
+ &#39;Demir, Clark, Giles, Murphey, 1994&#39;,
+ &#39;Demiray, 1981&#39;,
+ &#39;Demonstration workspace for a model&#39;,
+ &#39;Dempsher, Gann, Phair, 1984&#39;,
+ &#39;Depaor, Timmons, 1986&#39;,
+ &#39;Dependence of the period on the rate of protein degradation in minimal models for circadian oscillations   &#39;,
+ &#39;Dephosphorylation of spaKactive&#39;,
+ &#39;Dephosphorylation of spaRactive&#39;,
+ &#39;Deterministic Nonperiodic Flow&#39;,
+ &#39;Devries, Sherman, 2000&#39;,
+ &#39;Devries, Sherman, 2001&#39;,
+ &#39;Deyoung, Keizer, 1992&#39;,
+ &#39;Diabetes&#39;,
+ &#39;Diffusion&#39;,
+ &#39;Difrancesco, Noble, 1985&#39;,
+ &#39;difrancesco_noble_1985&#39;,
+ &#39;Dijkstra, Neal, Beever and France, 1992&#39;,
+ &#39;Dixit, Perelson, 2004&#39;,
+ &#39;Dokos, Celler, Lovell, 1996&#39;,
+ &#39;Dokos, Celler, Lovell, B, 1996&#39;,
+ &#39;Dougherty, Wright, Yew, 2005&#39;,
+ &#39;Drouhard, Roberge, 1987&#39;,
+ &#39;Dumaine, Towbin, Brugada, Vatta, Nesterenko, Nesterenko, Brugada, Brugada, Antzelevitch, 1999&#39;,
+ &#39;Dupont Berridge Goldbeter 1991&#39;,
+ &#39;Dupont Goldbeter 1992&#39;,
+ &#39;Dynamics of amino acid metabolism of primary human liver cells in 3D bioreactors&#39;,
+ &#39;Earm, Noble, 1990&#39;,
+ &#39;Ebihara, Johnson, 1980&#39;,
+ &#39;EColi Chassis&#39;,
+ &#39;Edwards, 2008&#39;,
+ &#39;Edwards, 2010&#39;,
+ &#39;Egli, Bertram, Sellix, Freeman, 2004&#39;,
+ &#39;ElectrEcoBlu Promoter 1&#39;,
+ &#39;ElectrEcoBlu Promoter 2&#39;,
+ &#39;ElectrEcoBlu Standard Virtual Biological Machine&#39;,
+ &#39;Elowitz, Leibler, 2000&#39;,
+ &#39;EMBC 2013 Tutorial - Noble 1962 reproducibility&#39;,
+ &#39;Enciso, Sontag, 2004&#39;,
+ &#39;Endresen, 1996&#39;,
+ &#39;Epithelial Transport&#39;,
+ &#39;Eskandari, Wright, Loo 2005&#39;,
+ &#39;Espinosa, 1998&#39;,
+ &#39;Evans, Errington, Shelly, Feeney, Chapman, Godfrey, Smith, Chappell, 2004&#39;,
+ &#39;Example bond graph models&#39;,
+ &#39;Faber, Rudy, 2000&#39;,
+ &#39;Faber, Rudy, 2000 and Tong, Ghouri, Taggart, 2014&#39;,
+ &#39;Fall, Keizer, 2001&#39;,
+ &#39;Fallon, Lauffenburger, 2000&#39;,
+ &#39;Farhy, Bowers, Veldhuis, 2007&#39;,
+ &#39;Faville, Pullan, Sanders, Koh, Lloyd, Smith, 2009&#39;,
+ &#39;Faville, Pullan, Sanders, Smith, 2008&#39;,
+ &#39;Feedback control of T-cell receptor activation&#39;,
+ &#39;Fenton, Karma, 1998&#39;,
+ &#39;Fenton, Karma, 2006&#39;,
+ &#39;FieldML example - a simple mesh&#39;,
+ &#39;Fink, Noble, Virag, Varro, Giles, 2008&#39;,
+ &#39;Fink, Slepchenko, Loew, 1999&#39;,
+ &#39;Fink, Slepchenko, Moraru, Watras, Schaff, Loew, 2000&#39;,
+ &#39;Fitzhugh, 1961&#39;,
+ &#39;Flynn, Green, Pedley, Boxer, Dearling, Watson, Boden, Begent, 2002&#39;,
+ &#39;Fohlmeister, Miller, 1997&#39;,
+ &#39;Formation of IC&#39;,
+ &#39;Formation of PYO&#39;,
+ &#39;Formation of TFS&#39;,
+ &#39;Fox, Mcharg, Gilmour, 2002&#39;,
+ &#39;Fridlyand, Tamarina, Philipson, 2003&#39;,
+ &#39;Friel, 1995&#39;,
+ &#39;Fujita, Toyoshima, Uda, Ozaki, Kubota and Kuroda 2010&#39;,
+ &#39;Gall, Susa, 1999&#39;,
+ &#39;Gardner, Dolnik, Collins, 1998&#39;,
+ &#39;Garmendia-Torres, Goldbeter and Jacquet 2007&#39;,
+ &#39;Garny, Kohl, Hunter, Boyett, Noble, 2003&#39;,
+ &#39;Gasser, Ogden, Holzapfel, 2006&#39;,
+ &#39;Gattoni 2016&#39;,
+ &#39;Gerard and Goldbeter 2009&#39;,
+ &#39;get-library&#39;,
+ &#39;Gilbert, Heiner, Rosser, Fulton, Gu, Trybilo, 2007&#39;,
+ &#39;Glucose Transport Model (Thorsen)&#39;,
+ &#39;Glucose Uptake in Enterocyte&#39;,
+ &#39;GLUT&#39;,
+ &#39;Goforth, Bertram, Khan, Zhang, Sherman, Satin, 2002&#39;,
+ &#39;Goldbeter 2006&#39;,
+ &#39;Goldbeter Dupont Berridge 1990&#39;,
+ &#39;Goldbeter, 1991&#39;,
+ &#39;Goldbeter, 1995&#39;,
+ &#39;Goldbeter, Gonze and Pourquie 2007&#39;,
+ &#39;Goldbeter, Pourquie, 2008&#39;,
+ &#39;Gonzalezheydrich, Steingard, Kohane, 1994&#39;,
+ &#39;Goodwin, 1965&#39;,
+ &#39;Grandi, Pasqualini and Bers, 2010&#39;,
+ &#39;Grange 2001&#39;,
+ &#39;Greenstein, Wu, Po, Tomaselli, Winslow, 2000&#39;,
+ &#39;Gross and Hopfer, 1998&#39;,
+ &#39;Gross and Hopfer, 1999&#39;,
+ &#39;Grossman, Feinberg, Kuznetsov, Dimitrov, Paul, 1998&#39;,
+ &#39;Guccione, Mcculloch, Waldman, 1991&#39;,
+ &#39;Gupta, Aslakson, Gurbaxani, Vernon, 2007&#39;,
+ &#39;Gupta, Maurya, Stephens, Dennis and Subramaniam, 2009&#39;,
+ &#39;Guyton, Aldosterone, 2008&#39;,
+ &#39;Guyton, Angiotensin, 2008&#39;,
+ &#39;Guyton, Antidiuretic, Hormone, 2008&#39;,
+ &#39;Guyton, Atrial, Natriuretic, Peptide, 2008&#39;,
+ &#39;Guyton, Autonomics, 2008&#39;,
+ &#39;Guyton, Capillary, Dynamics, 2008&#39;,
+ &#39;Guyton, Circulatory, Dynamics, 2008&#39;,
+ &#39;Guyton, Electrolytes, 2008&#39;,
+ &#39;Guyton, Full cardiovascular circulation model&#39;,
+ &#39;Guyton, Heart Hypertrophy or Deterioration, 2008&#39;,
+ &#39;Guyton, Heart, Rate, And, Stroke, Volume, 2008&#39;,
+ &#39;Guyton, Kidney, 2008&#39;,
+ &#39;Guyton, Muscle, Blood, Flow, Control, 2008&#39;,
+ &#39;Guyton, Muscle, Oxygen, Delivery, 2008&#39;,
+ &#39;Guyton, Non, Muscle, Blood, Flow, Control, 2008&#39;,
+ &#39;Guyton, Non, Muscle, Oxygen, Delivery, 2008&#39;,
+ &#39;Guyton, Pulmonary, Fluid, Dynamics, 2008&#39;,
+ &#39;Guyton, Pulmonary, Oxygen, Uptake, 2008&#39;,
+ &#39;Guyton, Red, Cells, And, Viscosity, 2008&#39;,
+ &#39;Guyton, Stress, Relaxation, 2008&#39;,
+ &#39;Guyton, Thirst, Drinking, And, Salt, Appetite, 2008&#39;,
+ &#39;Guyton, Volume, Receptors, 2008&#39;,
+ &#39;H+-ATPase (proton pump)&#39;,
+ &#39;Hai and Murphy 1988&#39;,
+ &#39;Halloy, Bernard, Loussouarn, Goldbeter, 2002&#39;,
+ &#39;Han 2019 - Solving a century-old conundrum underlying cardiac force-length relations&#39;,
+ &#39;Harrington, 2009&#39;,
+ &#39;Hatakeyama, Kimura, Naka, Kawasaki, Yumoto, Ichikawa, Kim, Saito, Saeki, Shirouzu, Yokoyama, Konagaya, 2003&#39;,
+ &#39;Hatzimanikatis, Lee, Bailey, 1999&#39;,
+ &#39;Haugh, 2004&#39;,
+ &#39;Heart Model&#39;,
+ &#39;Heinze, Keener, Midgley, 1998&#39;,
+ &#39;Heldt 2002&#39;,
+ &#39;Herz, Bonhoeffer, Anderson, May, Nowak, 1996&#39;,
+ &#39;Heyd, Drew, 2003&#39;,
+ &#39;HH Sodium Current model for estimation task&#39;,
+ &#39;Hilgemann, Noble, 1987&#39;,
+ &#39;Hill, 1972 - a model of feto-maternal oxygen exchange&#39;,
+ &#39;Hinch, Greenstein, Tanskanen, Xu, Winslow, 2004&#39;,
+ &#39;Hodgkin, Huxley, 1952&#39;,
+ &#39;Hoefnagel, Starrenburg, Martens, Hugenholtz, Kleerebezem, Vanswam, Bongers, Westerhoff, Snoep, 2002&#39;,
+ &#39;Holmes 2006&#39;,
+ &#39;Hornberg, Binder, Bruggeman, Schoeberl, Heinrich, Westerhoff, 2005&#39;,
+ &#39;Houart, Dupont and Goldbeter 1999&#39;,
+ &#39;Huang, Ferrell, 1996&#39;,
+ &#39;Human atrial cell models for investigating TBX5/PITX2 insufficiency-induced atrial fibrillation&#39;,
+ &#39;Human Left Ventricle&#39;,
+ &#39;Human Stomach Scaffold&#39;,
+ &#39;Hund, Rudy, 2004&#39;,
+ &#39;Hunter, Mcculloch, Terkeurs, 1998&#39;,
+ &#39;Hunter, Mcnaughton, Noble, 1975&#39;,
+ &#39;Hunter, Smaill, Hunter, 1995&#39;,
+ &#39;Hynne, Dano, Sorensen, 2001&#39;,
+ &#39;Iancu 2007&#39;,
+ &#39;Iber, Maini, 2002&#39;,
+ &#39;Ikeda BMadonna QKDB&#39;,
+ &#39;Improvement of metabolic performance of primary hepatocytes in  hyperoxic cultures by vitamin C in a novel small-scale bioreactor  &#39;,
+ &#39;Inada 2009&#39;,
+ &#39;Incorporation of sarcolemmal calcium transporters into the Shorten et al. (2007) model of skeletal muscle&#39;,
+ &#39;Inner medullary lactate production and accumulation: a vasa recta model, S. Randall Thomas, 2000&#39;,
+ &#39;Interaction of glycolysis and mitochondrial respiration in metabolic oscillations of pancreatic islets, Richard Bertram, Leslie S. Satin, Morten Gram Pedersen, Dan S. Luciani, and Arthur Sherman, 2007&#39;,
+ &#39;Intercellular calcium waves mediated by diffusion of inositol trisphosphate: a two-dimensional model. J. Sneyd, B.T. Wetton, A.C. Charles and M.J. Sanderson, 1995&#39;,
+ &#39;International, Si, Units, 2006&#39;,
+ &#39;Interpolation field over mesh with uncertain nodal values&#39;,
+ &#39;Interstitial Cell of Cajal Network Imaging Data&#39;,
+ &#39;Iribe, Kohl, Noble, 2006&#39;,
+ &#39;Irvine, Jafri, Winslow, 1999&#39;,
+ &#39;Itskov, Ehret, Mavrilas, 2006&#39;,
+ &#39;Iyer, Hajjar, Armoundas, 2007&#39;,
+ &#39;Iyer, Mazhari, Winslow, 2004&#39;,
+ &#39;Izakov, Katsnelson, Blyakhman, Markhasin, Shkylar, 1991&#39;,
+ &#39;Jafri, Rice, Winslow, 1998&#39;,
+ &#39;Jelic, Cupic, Kolaranic, 2005&#39;,
+ &#39;Joseph, Zavros, Merchant, Kirschner, 2003&#39;,
+ &#39;Kapela, A. Bezerianos, A. and Tsoukias, N. M. 2008&#39;,
+ &#39;Karagiannis, Popel, 2004&#39;,
+ &#39;Karagiannis, Popel, 2006&#39;,
+ &#39;Katsnelson, Nikitina, Chemla, Solovyova, Coirault, Lecarpentier, Markhasin, 2004&#39;,
+ &#39;Keener, 2001&#39;,
+ &#39;Keizer, Levine, 1996&#39;,
+ &#39;Kesmir, Deboer, 1999&#39;,
+ &#39;Kholodenko, Demin, Moehren, Hoek, 1999&#39;,
+ &#39;Kinetics of the Reverse Mode of the Na+/Glucose Cotransporter, Eskandari, Wright, Loo, 2005&#39;,
+ &#39;Kirschner, Panetta, 1998&#39;,
+ &#39;Kirschner, Webb, 1996&#39;,
+ &#39;Kneller, Ramirez, Chartier, Courtemanche, Nattel, 2002&#39;,
+ &#39;Koivumaki,2009&#39;,
+ &#39;Komarova 2005&#39;,
+ &#39;Komarova, Smith, Dixon, Sims and Wahl, 2003&#39;,
+ &#39;Komarova, Wodarz, 2003&#39;,
+ &#39;Kongas, Vanbeek, 2001&#39;,
+ &#39;Korzeniewski, Zoladz, 2001&#39;,
+ &#39;Kroll, 2000&#39;,
+ &#39;Kurata, Hisatome, Imanishi, Shibamoto, 2002&#39;,
+ &#39;Kyrylov, Severyanova, Vieira, 2005&#39;,
+ &#39;Lambeth, Kushmerick, 2002&#39;,
+ &#39;Land et al. 2012&#39;,
+ &#39;Landesberg, Sideman, 1994&#39;,
+ &#39;Large Scale Left Ventricular Shape Atlas Using Automated Model Fitting to Contours&#39;,
+ &#39;Latency correlates with period in a model for signal-induced Ca2+ oscillations based  on Ca2+induced Ca2+ release&#39;,
+ &#39;Lebeau, Robson, Mckinnon, Donald, Sneyd, 1997&#39;,
+ &#39;Lebeau, Yule, Groblewski, Sneyd, 1999&#39;,
+ &#39;Leloup, Goldbeter, 1998&#39;,
+ &#39;Leloup, Goldbeter, 2003&#39;,
+ &#39;Leloup, Goldbeter, 2004&#39;,
+ &#39;Leloup, Gonze, Goldbeter, 1999&#39;,
+ &#39;Lemaire, Tobin, Greller, Cho, Suva, 2004&#39;,
+ &#39;Lemon, Gibson, Bennett, 2003&#39;,
+ &#39;Lenbury, Pacheenburawana, 1991&#39;,
+ &#39;Lenbury, Pornsawad, 2005&#39;,
+ &#39;Lenbury, Ruktamatakul, Amornsamarnkul, 2001&#39;,
+ &#39;Li, Bertram and Rinzel, 1996&#39;,
+ &#39;Li, Kuang, Mason, 2006&#39;,
+ &#39;Li, Rinzel, 1994&#39;,
+ &#39;Li, Smith, 2009&#39;,
+ &#39;Lindblad, Murphey, Clark, Giles, 1996&#39;,
+ &#39;Linear 2nd order nonhomogeneous ODE with constant coefficients&#39;,
+ &#39;Liu, Hu, Peng, Liu, 1999&#39;,
+ &#39;Livshitz, Rudy, 2007&#39;,
+ &#39;Lockwood, Ewy, Hermann, Holford, 2006&#39;,
+ &#39;Loewe-Lutz-Fabbri-Severi human sinus node cellular electrophysiology model&#39;,
+ &#39;Lokta, Volterra&#39;,
+ &#39;Lovell, Cloherty, Celler, Dokos, 2004&#39;,
+ &#39;Luo, Rudy, 1991&#39;,
+ &#39;Luo, Rudy, 1994&#39;,
+ &#39;luo_rudy_1991&#39;,
+ &#39;Macgregor, Leng, 2005&#39;,
+ &#39;Mackenzie, Loo, Panayotova-Heiermann and Wright, 1996&#39;,
+ &#39;Magnus, Keizer, 1997&#39;,
+ &#39;Magnus, Keizer, 1998&#39;,
+ &#39;Mahajan, Shiferaw, Sato, Baher, Olcese, Xie, Yang, Chen, Restrepo, Karma, Garfinkel, Qu, Weiss, 2008&#39;,
+ &#39;Maldonado, Borchers, Findeisen and Allgower, 2006&#39;,
+ &#39;Maleckar, Greenstein, Trayanova, Giles, 2009&#39;,
+ &#39;Maltsev 2009&#39;,
+ &#39;Maly, Wiley, Lauffenburger, 2004&#39;,
+ &#39;Malys et al. 2010&#39;,
+ &#39;Marcano, Yang, Nieves-Gonzalez, Clausen, Moore 2009&#39;,
+ &#39;Margaridamartins, Mendes, Coreiro, Pocesfreire, 2001&#39;,
+ &#39;Marhl, Haberichter, Brumen, Heinrich, 2000&#39;,
+ &#39;Marhl, Schuster, Brumen, Heinrich, 1997&#39;,
+ &#39;Martinov, Vitvitsky, Mosharov, Banerjee, Ataullakhanov, 2000&#39;,
+ &#39;Marwan, 2003&#39;,
+ &#39;Matsuoka, Sarai, Kuratomi, Ono, Noma, 2003&#39;,
+ &#39;Maurya et al. 2005&#39;,
+ &#39;Mazhari, Greenstein, Winslow, Marban, Nuss, 2001&#39;,
+ &#39;Mcallister, Noble, Tsien, 1975&#39;,
+ &#39;Mckenzie, Sneyd, 1998&#39;,
+ &#39;Mclean, Su, Vandenbogert, 2003&#39;,
+ &#39;Mears 1997&#39;,
+ &#39;Mechanism of doxorubicin cardiotoxicity evaluated by integrating multiple molecular effects into a biophysical model&#39;,
+ &#39;Metabolic Component Library&#39;,
+ &#39;Michailova 2005&#39;,
+ &#39;Michailova, Mcculloch, 2001&#39;,
+ &#39;Miftakhov, Abdusheva, Christensen, 1999&#39;,
+ &#39;Mijailovich, Butler, Fredburg, 2000&#39;,
+ &#39;Mikane, Araki, Kohno, Nakayama, Suzuki, Shimuzi, Matsubara, Hirakawa, Takaki, Suga, 1997&#39;,
+ &#39;Minimal haemodynamic system model including ventricular interaction and valve dynamics, Bram W Smith, J Geoffrey Chase, Roger I Nokes, Geoffrey M Shaw, Graeme Wake, 2004&#39;,
+ &#39;Mitchell, Schaeffer, 2003&#39;,
+ &#39;Mitochondria regulate the amplitude of simple and  complex calcium oscillations&#39;,
+ &#39;Mittler, Sulzer, Neumann, Perelson, 1998&#39;,
+ &#39;Mlcek, Neumann, Kittnar, Novak, 2001&#39;,
+ &#39;Model of a rabbit Purkinje cell&#39;,
+ &#39;Models for the OpenCOR and PMR tutorial by Peter Hunter&#39;,
+ &#39;Modular Analysis of Signal Transduction Networks&#39;,
+ &#39;Mohr, Taylor, Newell, 2008&#39;,
+ &#39;Moore, Li, 2004&#39;,
+ &#39;Morris and Lecar 1981&#39;,
+ &#39;Mosekilde, Lading, Yanchuk, Maistrenko, 2001&#39;,
+ &#39;Moss, Kazmierczak, Kirley, Harris, 2009&#39;,
+ &#39;mRNA expression levels in failing human hearts predict cellular electrophysiological remodeling: A population-based simulation study&#39;,
+ &#39;Muller, Obeyesekere, Mills, Ram, 2008&#39;,
+ &#39;My Beeler Model&#39;,
+ &#39;Myocardial contractility and regional work throughout the cardiac cycle using FEM and MRI&#39;,
+ &#39;Na+/Glucose Transporter&#39;,
+ &#39;Na+/H+ Exchanger&#39;,
+ &#39;Na+/HCO3- Cotransporter&#39;,
+ &#39;Na+/K+-ATPase (sodium-potassium pump)&#39;,
+ &#39;Nagano and Gerritsen, 2001&#39;,
+ &#39;Nagerl, Novo, Mody, Vergara, 2000&#39;,
+ &#39;Nash, Panfilov, 2004&#39;,
+ &#39;Nazaret, Heiske, Thurley and Mazat, 2009&#39;,
+ &#39;Nelson, Murray, Perelson, 2000&#39;,
+ &#39;Nelson, Perelson 1995&#39;,
+ &#39;Neumann, Lam, Dahari, Gretch, Wiley, Layden, Perelson, 1998&#39;,
+ &#39;Neurovascular Coupling&#39;,
+ &#39;Nevo, Golding, Neumann, Schwartz, Akselrod, 2004&#39;,
+ &#39;Ni et al. 2017 Human atrial model&#39;,
+ &#39;Niederer 2013 PlosOne&#39;,
+ &#39;Niederer, Hunter, Smith, 2006&#39;,
+ &#39;Niederer, Smith, 2007&#39;,
+ &#39;Noble 1962 model for Physiome article&#39;,
+ &#39;Noble, 1962&#39;,
+ &#39;Noble, 2000&#39;,
+ &#39;Noble, Difrancesco, Denyer, 1989&#39;,
+ &#39;Noble, Noble, 1984&#39;,
+ &#39;Noble, Noble, 2001&#39;,
+ &#39;Noble, Noble, Bett, Earm, Ho, So, 1991&#39;,
+ &#39;Noble, Varghese, Kohl, Noble, 1998&#39;,
+ &#39;Noble1998&#39;,
+ &#39;Noble_Noble_1984&#39;,
+ &#39;Nonlinearities make a difference: comparison of two common Hill-type models with real muscle, Siebert, Rode, Herzog, Till, Blickhan, 2008&#39;,
+ &#39;Novak, Csikasznagy, Gyorffy, Chen, Tyson, 1998&#39;,
+ &#39;Novak, Pataki, Ciliberto, Tyson, 2001&#39;,
+ &#39;Novak, Tyson, 1993&#39;,
+ &#39;Novak, Tyson, 1997&#39;,
+ &#39;Novak, Tyson, 2004&#39;,
+ &#39;Nowak, Bangham, 1996&#39;,
+ &#39;NVC&#39;,
+ &#39;Nygren, Fiset, Firek, Clark, Lindblad, Clark, Giles, 1998&#39;,
+ &quot;O&#39;Hara-Rudy-CiPA-v1.0 (2017)&quot;,
+ &#39;Obeyesekere, Zimmerman, Tecarro, Auchmuty, 1999&#39;,
+ &#39;Olsen, Hauser, Kummer, 2003&#39;,
+ &#39;On the encoding and decoding of calcium signals in hepatocytes&#39;,
+ &#39;One-pool model for Ca2+ oscillations involving Ca2+ and inositol 1,4,5-trisphosphate as co-agonists for Ca2+ release&#39;,
+ &#39;Oomens, Maenhout, Vanoijen, Drost, Baaijens, 2003&#39;,
+ &#39;OpenCOR&#39;,
+ &#39;OpenCOR issue 231&#39;,
+ &#39;OpenCOR issue 458&#39;,
+ &#39;OpenCOR issue demonstration - initial_value&#39;,
+ &#39;Optimal velocity and safety of discontinuous conduction through the heterogeneous Purkinje-ventricular junction, Oleg V. Aslanidi, Philip Stewart, Mark R. Boyett and Henggui Zhang, 2009&#39;,
+ &#39;Ostby, Oyehaug, Einevoll, Nagelhus, Plahte, Zeuthen, Voipio, Lloyd, Ottersen, Omholt, 2008&#39;,
+ &#39;Overgaard 2007&#39;,
+ &#39;Oyehaug, Ostby, Lloyd, Omholt, Einevoll, 2011&#39;,
+ &#39;Oyehaug, Ostby, Lloyd, Ottersen, Omholt, Einevoll, 2009&#39;,
+ &#39;paci_hyttinen_aaltosetala_severi_2013&#39;,
+ &#39;Palecek, Horwitz, Lauffenburger, 1999&#39;,
+ &#39;Pandit, Clark, Giles, Demir, 2001&#39;,
+ &#39;Pandit, Giles, Demir, 2003&#39;,
+ &#39;Panerai, 1980&#39;,
+ &#39;Parent, Supplisson, Loo, Wright, 1992&#39;,
+ &#39;Pasek, Simurda, Christe, 2006&#39;,
+ &#39;Pasek, Simurda, Orchard, Christe, 2008&#39;,
+ &#39;Passive epithelial cell transport models&#39;,
+ &#39;Pedersen, Bertram, Sherman, 2005&#39;,
+ &#39;Per Pixel Lighting&#39;,
+ &#39;Perelson 1993&#39;,
+ &#39;Perelson, Neumann, Markowitz, Leonard, Ho, 1996&#39;,
+ &#39;Peterson and Riggs, 2010&#39;,
+ &#39;pH control&#39;,
+ &#39;Phillips 2007&#39;,
+ &#39;Phillips 2008&#39;,
+ &#39;Pivonka, Zimak, Smith, Gardiner, Dunstan, Sims, Martin and Mundy, 2008&#39;,
+ &#39;Plant, 1981&#39;,
+ &#39;Playing with stimulus frequency and the ORd model&#39;,
+ &#39;Poh, 2012&#39;,
+ &#39;Potter, Greller, Cho, Nuttall, Stroup, Suva, Tobin, 2005&#39;,
+ &#39;Potter, Zager, Barton, 2006&#39;,
+ &#39;Practical application of CellML 1.1: The integration of new mechanisms into a human ventricular myocyte model&#39;,
+ &#39;Priebe, Beuckelmann, 1998&#39;,
+ &#39;Principled Model Base&#39;,
+ &#39;Proctor, 2005&#39;,
+ &#39;Proctor, 2007&#39;,
+ &#39;Protein CDS for GFP&#39;,
+ &#39;Protein CDS for PhzM&#39;,
+ &#39;Protein CDS for PhzS&#39;,
+ &#39;Protein CDS for spaK&#39;,
+ &#39;Protein CDS for spaR&#39;,
+ &#39;Protein CDS for TF ElectrEcoblu Device 1&#39;,
+ &#39;Protein CDS for TF ElectrEcoblu Device 2&#39;,
+ &#39;Prototype reset rules&#39;,
+ &#39;Puglisi, Bers, 2001&#39;,
+ &#39;Purvis, Butera, 2005&#39;,
+ &#39;Purvis, Smith, Koizumi, Butera, 2007&#39;,
+ &#39;Qu, Maclellan, Weiss, 2003&#39;,
+ &#39;Ralser at el. 2007&#39;,
+ &#39;Ramirez, Nattel, Courtemanche, 2000&#39;,
+ &#39;Rangamani 2007&#39;,
+ &#39;Raposo, Sobrinho and Ferreira, 2002&#39;,
+ &#39;Rattananakul, Lenbury, Krishnamara, Wollkind, 2003&#39;,
+ &#39;Razumova, Bukatina, Campbell, 1999&#39;,
+ &#39;Razumova, Bukatina, Campbell, 2000&#39;,
+ &#39;RBS for GFP&#39;,
+ &#39;RBS for PhzM&#39;,
+ &#39;RBS for PhzS&#39;,
+ &#39;RBS for spaK&#39;,
+ &#39;RBS for spaR&#39;,
+ &#39;RBS for TF  Electroblu Device 2&#39;,
+ &#39;RBS for TF Electroblu Device 1&#39;,
+ &#39;Reed, Nijhout, Sparks, Ulrich, 2004&#39;,
+ &#39;Reidl, Borowski, Sensse, Starke, Zapotocky, Eiswirth, 2006&#39;,
+ &#39;Renal Transport&#39;,
+ &#39;Respiratory System&#39;,
+ &#39;Revilla, Garcia-Ramos, 2003&#39;,
+ &#39;Riccobene, Omann, Linderman, 1999&#39;,
+ &#39;Rice, Jafri, Winslow, 2000&#39;,
+ &#39;Rice, Wang, Bers, Detombe, 2008&#39;,
+ &#39;Rice, Winslow, Hunter, 1999&#39;,
+ &#39;Rice, Winslow, Jafri, 1999&#39;,
+ &#39;Riemer, Sobie, Tung, 1998&#39;,
+ &#39;Rivlin, Saunders, 1951&#39;,
+ &#39;Rogers &amp; McCulloch (1994)&#39;,
+ &#39;Rogers, Mcculloch, 1994&#39;,
+ &#39;Romond, Rustici, Gonze, Goldbeter, 1999&#39;,
+ &#39;Rong, Perelson 2009&#39;,
+ &#39;Roux, Noble, Noble, Marhl, 2006&#39;,
+ &#39;Rubin, Shevtsova, Ermentrout, Smith and Rybak 2009&#39;,
+ &#39;Sachse, Glanzel, Seemann, 2003&#39;,
+ &#39;Sachse, Moreno, Abildskov, 2008&#39;,
+ &#39;Saftenku, Williams, Sitsapesan, 2001&#39;,
+ &#39;Sakmann, Spindler, Bryant, Linz, Noble, 2000&#39;,
+ &#39;Salem, Saidel, Stanley, Cabrera, 2002&#39;,
+ &#39;Sarai, Matsuoka, Kuratomi, Ono, Noma, 2003&#39;,
+ &#39;Sarkar, Lauffenburger, 2003&#39;,
+ &#39;Saucerman, Bers, 2008&#39;,
+ &#39;Saucerman, Brunton, Michailova, Mcculloch, 2003&#39;,
+ &#39;Saucerman, Mcculloch, 2004&#39;,
+ &#39;Schenzle 1994&#39;,
+ &#39;Schlosser, Selgrade, 2000&#39;,
+ &#39;Schmid, Nash, Young, Hunter, 2006&#39;,
+ &#39;Schneider, Shimayoshi, Amano, Matsuda, 2006&#39;,
+ &#39;Schoeberl, Eichler-Jonsson, Gilles, Muller, 2002&#39;,
+ &#39;Schuster, Beny, Meister, 2003&#39;,
+ &#39;SED-ML example&#39;,
+ &#39;Sedaghat, Sherman, Quon, 2002&#39;,
+ &#39;Seemann, Sachse, Weib, Dossel, 2003&#39;,
+ &#39;semantic-annotation&#39;,
+ &#39;Session Resource Workspace&#39;,
+ &#39;Shannon, Wang, Puglisi, Weber, Bers, 2004&#39;,
+ &#39;Shaw, Chase, Starfinger, Smith, Hann, Desaive, Ghuysen, 2007&#39;,
+ &#39;Shaw, Rudy, 1997&#39;,
+ &#39;Shi, Hose, 2009&#39;,
+ &#39;Shiferaw, Watanabe, Garfinkel, Weiss, Karma, 2003&#39;,
+ &#39;Shim 2006&#39;,
+ &#39;Shorten, Ocallaghan, Davidson, Soboleva, 2007&#39;,
+ &#39;Shorten, Robson, Mckinnon, Wall, 2000&#39;,
+ &#39;Shorten, Wall, 2000&#39;,
+ &#39;Shrestha, Hollot, Chipkin, Schmitt and Chait 2010&#39;,
+ &#39;Siebert, Rode, Herzog, Till and Blickhan, 2008&#39;,
+ &#39;Signalling Principled Model Example&#39;,
+ &#39;Simple Growth Model &#39;,
+ &#39;Simple sine test model&#39;,
+ &#39;Simulations of the effects of inositol  1,4,5=trisphosphate 3-kinase and  S-phosphatase activities on Ca+ oscillations  &#39;,
+ &#39;Sine-Approximations&#39;,
+ &#39;Skouibine, Trayanova, Moore, 1999&#39;,
+ &#39;Smith Chase 2004&#39;,
+ &#39;Smith, 1980&#39;,
+ &#39;Smith, Abdala, Koizumi, Rybak and Paton 2007&#39;,
+ &#39;Smith, Crampin, 2004&#39;,
+ &#39;Sneyd, Dufour, 2002&#39;,
+ &#39;Sneyd, Tsaneva-Atanasova, Yule, Thompson, Shuttleworth, 2004&#39;,
+ &#39;Sneyd, Tsanevaatanasova, Bruce, Straub, Giovannucci, Yule, 2003&#39;,
+ &#39;Snyder, Palmer, Moore, 2000&#39;,
+ &#39;Snyed, Wetton, Charles, Sanderson, 1995&#39;,
+ &#39;Sobie, Dilly, Dossantoscruz, Lederer, Jafri, 2002&#39;,
+ &#39;Soboleva, Vetharaniam, Nixon, Montenegro, Pearson, Sneyd, 2005&#39;,
+ &#39;Some &quot;test&quot; models&#39;,
+ &#39;Some test SED-ML to play with the nested proposal&#39;,
+ &#39;SPARC MIS Data Model&#39;,
+ &#39;Spiro, Parkinson, Othmer, 1997&#39;,
+ &#39;Spronck, 2012&#39;,
+ &#39;Sriram, Bernot, Kepes, 2007&#39;,
+ &#39;Standard Virtual Parts Template Models v200906&#39;,
+ &#39;Starbuck, Wiley, Lauffenburger, 1990&#39;,
+ &#39;Steady state HMT&#39;,
+ &#39;Stern, Song, Sham, Yang, Boheler, Rios, 1999&#39;,
+ &#39;Stewart, Aslanidi, Noble, Noble, Boyett, Zhang, 2009&#39;,
+ &#39;Sthilaire, Gronfier, Zeitzer, Klerman, 2007&#39;,
+ &#39;Stilianakis, Dietz, Schenzle, 1997&#39;,
+ &#39;Stomach Annotator for SPARC&#39;,
+ &#39;Structural Test CellML 1.1 Models&#39;,
+ &#39;Sulman et al. 2008&#39;,
+ &#39;Surkis, Peskin, Tranchina, Leonard, 1998&#39;,
+ &#39;Sveiczer, Csikasznagy, Gyorffy, Tyson, Novak, 2000&#39;,
+ &#39;SVP Template Library&#39;,
+ &#39;Swanson, True, Lin, Buhler, Vessella, Murray, 2001&#39;,
+ &#39;Swat, Kel and Herzel 2004&#39;,
+ &#39;Switching from Simple to Complex Oscillations in Calcium Signaling&#39;,
+ &#39;Synchronized Scene Viewer&#39;,
+ &#39;Tabak, Mascagni and Bertram 2010&#39;,
+ &#39;Tabak, Toporikova, Freeman, Bertram, 2007&#39;,
+ &#39;Takotsubo modelling, Land et al. 2014&#39;,
+ &#39;Tentusscher, Noble, Noble, Panfilov, 2004&#39;,
+ &#39;Tentusscher, Noble, Noble, Panfilov, 2006&#39;,
+ &#39;Tentusscher, Panfilov, 2006&#39;,
+ &#39;Terkildsen, Niederer, Crampin, Hunter, Smith, 2008&#39;,
+ &#39;Test Area&#39;,
+ &#39;Test model for using data to control a variable value&#39;,
+ &#39;Testing plugin annotation&#39;,
+ &#39;Testing RDF linking across CellML, SED-ML, and SVG&#39;,
+ &#39;Teusink, Passarge, Reijenga, Esgalhado, Vanderweijden, Schepper, Walsh, Bakker, Vandam, Westerhoff, Snoep, 2000&#39;,
+ &#39;Tham 2008&#39;,
+ &#39;The cardiac Na+ /K+ ATPase: An updated, thermodynamically consistent model&#39;,
+ &#39;The Glucose-induced Switch Between Glycogen Phosphorylase and Glycogen  Synthase in the Liver: Outlines of a Theoretical Approach&#39;,
+ &#39;Thomas, 2000&#39;,
+ &#39;Thomsen, Neubig, 1989&#39;,
+ &#39;Tolic, Mosekilde, Sturis, 2000&#39;,
+ &#39;Tomida, Hirose, Takizawa, Shibasaki, Iino, 2003&#39;,
+ &#39;Tong, Choi, Kharche, Holden, Zhang, Taggart, 2011&#39;,
+ &#39;Tong, Tribe, Smith, Taggart, 2014&#39;,
+ &#39;Topp, Promislow, Devries, Miura, Finegood, 2000&#39;,
+ &#39;Tran 2010&#39;,
+ &#39;Tran 2017 - Cross-bridge model of shortening heat&#39;,
+ &#39;Tran, Smith, Loiselle, Crampin, 2009&#39;,
+ &#39;Tutorial on Constructing a Systems Model from SVPs&#39;,
+ &#39;Two compartment model of diazepam biotransformation in an organotypical culture of primary human hepatocytes&#39;,
+ &#39;Tyson, 1991&#39;,
+ &#39;Tyson, Hong, Thron, Novak, 1999&#39;,
+ &#39;Ueda, Hagiwara, Kitano, 2001&#39;,
+ &#39;Uncertain starting point parabola&#39;,
+ &#39;Units&#39;,
+ &#39;units import test&#39;,
+ &#39;Vanbeek, 2007&#39;,
+ &#39;Vancapelle, Durrer, 1980&#39;,
+ &#39;Vanderpol, Vandermark, 1928&#39;,
+ &#39;Vangoor, Lebeau, Krsmanovic, Sherman, Catt, Stojilkovic, 2000&#39;,
+ &#39;Varela - Canine Atrial Cell Models&#39;,
+ &#39;Vasalou and Henson 2010&#39;,
+ &#39;Vaseghi, Baumeister, Rizzi, Reuss, 1999&#39;,
+ &#39;Vempati, Karagiannis, Popel, 2007&#39;,
+ &#39;Vendelin, Kongas, Saks, 2000&#39;,
+ &#39;Vilar 2006&#39;,
+ &#39;Vilar, Kueh, Barkai, Leibler, 2002&#39;,
+ &#39;Vinnakota, Kemp and Kushmerick, 2006&#39;,
+ &#39;Vinnakota, Rusk, Palmer, Shankland and Kushmerick, 2010&#39;,
+ &#39;Virtual Bacterial Photography&#39;,
+ &#39;Viswanathan, Shaw, Rudy, 1999&#39;,
+ &#39;viswanathan_shaw_rudy_1999&#39;,
+ &#39;Volume mesh of liver&#39;,
+ &#39;VPH-MIP case study on CellML&#39;,
+ &#39;Wanant, Quon, 2000&#39;,
+ &#39;Wang, Cirit and Haugh 2009&#39;,
+ &#39;Wang, Huang, Huang, 2006&#39;,
+ &#39;Wang, Li, Kuang, 2007&#39;,
+ &#39;Wang, Lin, Lin, Wu, 2008&#39;,
+ &#39;Wang, Sobie, 2008&#39;,
+ &#39;Warashina, Ogura, 2004&#39;,
+ &#39;Warren, Tawhai, Crampin, 2009&#39;,
+ &#39;Waugh, Sherratt, 2006&#39;,
+ &#39;Waugh, Sherratt, 2007&#39;,
+ &#39;Weak Acid Hydration&#39;,
+ &#39;Webb, Sherratt, Fish, 2002&#39;,
+ &quot;Wein, D&#39;Amato, Perelson 1998&quot;,
+ &#39;Weinstein 2000&#39;,
+ &#39;Weinstein, 1995&#39;,
+ &#39;Weinstein, 1998&#39;,
+ &#39;Westermark, Lansner, 2003&#39;,
+ &#39;Wierschem 2004&#39;,
+ &#39;Wilkins, Sneyd, 1998&#39;,
+ &#39;Winograd, Destexhe, Sanchezvives, 2008&#39;,
+ &#39;Winslow, Rice, Jafri, Marban, Ororke, 1999&#39;,
+ &#39;Wodarz, 2003&#39;,
+ &#39;Wodarz, Hamer, 2007&#39;,
+ &#39;Wodarz, Jansen, 2003&#39;,
+ &#39;Wodarz, Nowak, 1999&#39;,
+ &#39;Wodarz, Sierro, Klenerman, 2007&#39;,
+ &#39;Wolf, Heinrich, 2000&#39;,
+ &#39;Wolf, Passarge, Somsen, Snoep, Heinrich, Westerhoff, 2000&#39;,
+ &#39;Wolf, Sohn, Heinrich, Kuriyama, 2001&#39;,
+ &#39;Workflows for analysis of valvular and aortic disease&#39;,
+ &#39;Workspace Annotations&#39;,
+ &#39;Wu, Jeneson, Beard, 2006&#39;,
+ &#39;Wu, Yang, Vinnakota, Beard, 2007&#39;,
+ &#39;Yamaguchi, Takaki, Matsubara, Yasuhara, Suga, 1996&#39;,
+ &#39;Yanagihara 1980&#39;,
+ &#39;Yang, Clark, Bryan, Robertson, 2003&#39;,
+ &#39;Yang, Tong, Mccarver, Hines, Beard, 2006&#39;,
+ &#39;Yasumura, Suga, 1988&#39;,
+ &#39;Yates, Stark, Klein, Antia, Callard, 2007&#39;,
+ &#39;Yi, Fogelson, Keener, Peskin, 2003&#39;,
+ &#39;Youm, Kim, Han, Kim, Joo, Leem, Goto, Noma, Earm, 2006&#39;,
+ &#39;Zager, Schlosser, Tran, 2007&#39;,
+ &#39;Zeng, Laurita, Rosenbaum, Rudy, 1995&#39;,
+ &#39;Zhang, Holden, Kodama, Honjo, Lei, Varghese, Boyett, 2000&#39;,
+ &#39;Zinc/JSON resources&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>List all models in the CellML repository</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span><span class="o">.</span><span class="n">list_models</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>List only the models that contains the name <code class="docutils literal notranslate"><span class="pre">tentusscher</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span><span class="o">.</span><span class="n">list_models</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;tentusscher&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;Tentusscher, Noble, Noble, Panfilov, 2004&#39;,
+ &#39;Tentusscher, Noble, Noble, Panfilov, 2006&#39;,
+ &#39;Tentusscher, Panfilov, 2006&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>List the cellml models that are stored locally</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_cellml_models</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;tentusscher_panfilov_2006&#39;: [&#39;ten_tusscher_model_2006_IK1Ko_epi_units.cellml&#39;,
+  &#39;ten_tusscher_model_2006_IK1Ko_endo_units.cellml&#39;,
+  &#39;ten_tusscher_model_2006_IK1Ko_M_units.cellml&#39;],
+ &#39;tentusscher_noble_noble_panfilov_2006&#39;: [&#39;tentusscher_noble_noble_panfilov_2006_c.cellml&#39;],
+ &#39;severi_fantini_charawi_difrancesco_2012&#39;: [&#39;severi_fantini_charawi_difrancesco_2012.cellml&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Download the model <code class="docutils literal notranslate"><span class="pre">Tentusscher,</span> <span class="pre">Noble,</span> <span class="pre">Noble,</span> <span class="pre">Panfilov,</span> <span class="pre">2006</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span><span class="o">.</span><span class="n">download_model</span><span class="p">(</span><span class="s2">&quot;Tentusscher, Noble, Noble, Panfilov, 2006&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Download model Tentusscher, Noble, Noble, Panfilov, 2006 for https://models.physiomeproject.org/workspace/tentusscher_noble_noble_panfilov_2006 to /Users/henriknf/local/src/cell_model/models/cellml/tentusscher_noble_noble_panfilov_2006
+</pre></div>
+</div>
+</div>
+</div>
+<p>List the cellml models that are stored locally again and see that we now have a new model available</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_cellml_models</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;tentusscher_panfilov_2006&#39;: [&#39;ten_tusscher_model_2006_IK1Ko_epi_units.cellml&#39;,
+  &#39;ten_tusscher_model_2006_IK1Ko_endo_units.cellml&#39;,
+  &#39;ten_tusscher_model_2006_IK1Ko_M_units.cellml&#39;],
+ &#39;tentusscher_noble_noble_panfilov_2006&#39;: [&#39;tentusscher_noble_noble_panfilov_2006_c.cellml&#39;],
+ &#39;severi_fantini_charawi_difrancesco_2012&#39;: [&#39;severi_fantini_charawi_difrancesco_2012.cellml&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>List all the local gotran ode files</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_ode_models</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;tentusscher_2004_mcell_updated.ode&#39;,
+ &#39;paci_hyttinen_aaltosetala_severi_ventricularVersion.ode&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate a gotran ode file from the newly downloaded cellml model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">cellml2gotran</span><span class="p">(</span><span class="s1">&#39;tentusscher_noble_noble_panfilov_2006&#39;</span><span class="p">,</span> <span class="s1">&#39;tentusscher_noble_noble_panfilov_2006_c.cellml&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>List all the local gotran ode files again and see that it has been updated</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_ode_models</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;tentusscher_noble_noble_panfilov_2006_c.ode&#39;,
+ &#39;tentusscher_2004_mcell_updated.ode&#39;,
+ &#39;paci_hyttinen_aaltosetala_severi_ventricularVersion.ode&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="python_model.html" title="previous page">&lt;no title&gt;</a>
+    <a class='right-next' id="next-link" href="Cav12.html" title="next page">L-type Ca channel</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Henrik Finsberg<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

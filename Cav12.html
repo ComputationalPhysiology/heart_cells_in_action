@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>L-type Ca channel &#8212; Heart cells in Action</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="hERG channel" href="Kir21.html" />
+    <link rel="prev" title="The CellML model repository" href="cellml.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Heart cells in Action</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="README.html">Heart Cells in Action</a>
+  </li>
+  <li class="">
+    <a href="index.html">Cellmodel tutorials</a>
+  </li>
+  <li class="">
+    <a href="heart_cell.html">Introducing the heart cells</a>
+  </li>
+  <li class="">
+    <a href="action_potential.html">The action potential</a>
+  </li>
+  <li class="">
+    <a href="cellml.html">The CellML model repository</a>
+  </li>
+  <li class="active">
+    <a href="">L-type Ca channel</a>
+  </li>
+  <li class="">
+    <a href="Kir21.html">hERG channel</a>
+  </li>
+  <li class="">
+    <a href="Kv43.html">hERG channel</a>
+  </li>
+  <li class="">
+    <a href="KvLQT1.html">hERG channel</a>
+  </li>
+  <li class="">
+    <a href="Nav15.html">hERG channel</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/Cav12.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+            <div class="dropdown-buttons sourcebuttons">
+                <a class="repository-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
+                <a class="issues-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action/issues/new?title=Issue%20on%20page%20%2FCav12.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                <a class="edit-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action/edit/master/./Cav12.ipynb"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+            </div>
+        </div>
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ComputationalPhysiology/heart_cells_in_action/master?urlpath=tree/./Cav12.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/ComputationalPhysiology/heart_cells_in_action/edit/master/./Cav12.ipynb">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="l-type-ca-channel">
+<h1>L-type Ca channel<a class="headerlink" href="#l-type-ca-channel" title="Permalink to this headline">¶</a></h1>
+<p>https://en.wikipedia.org/wiki/Cav1.2</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">utils</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_ode_models</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;tentusscher_noble_noble_panfilov_2006_c.ode&#39;,
+ &#39;tentusscher_2004_mcell_updated.ode&#39;,
+ &#39;paci_hyttinen_aaltosetala_severi_ventricularVersion.ode&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;tentusscher_noble_noble_panfilov_2006_c&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">rebuild</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Loaded ODE model &#39;tentusscher_noble_noble_panfilov_2006_c&#39; with:
+     Num full states: 17
+      Num parameters: 46
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">t_start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">V_index</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">state_index</span><span class="p">(</span><span class="s2">&quot;V&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V_index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">u</span><span class="p">[:,</span> <span class="n">V_index</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b93cc8520&gt;]
+</pre></div>
+</div>
+<img alt="_images/Cav12_8_1.png" src="_images/Cav12_8_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">monitor</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">monitor</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(10001, 17)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">monitor</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(10001, 86)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># List all monitor names</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">monitor_names</span><span class="p">())</span>
+
+<span class="n">i_CaL_index</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">monitor_index</span><span class="p">(</span><span class="s2">&quot;i_CaL&quot;</span><span class="p">)</span>
+<span class="n">i_CaL</span> <span class="o">=</span> <span class="n">monitor</span><span class="p">[:,</span> <span class="n">i_CaL_index</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;E_Na&#39;, &#39;E_K&#39;, &#39;E_Ks&#39;, &#39;E_Ca&#39;, &#39;alpha_K1&#39;, &#39;beta_K1&#39;, &#39;xK1_inf&#39;, &#39;i_K1&#39;, &#39;i_Kr&#39;, &#39;xr1_inf&#39;, &#39;alpha_xr1&#39;, &#39;beta_xr1&#39;, &#39;tau_xr1&#39;, &#39;xr2_inf&#39;, &#39;alpha_xr2&#39;, &#39;beta_xr2&#39;, &#39;tau_xr2&#39;, &#39;i_Ks&#39;, &#39;xs_inf&#39;, &#39;alpha_xs&#39;, &#39;beta_xs&#39;, &#39;tau_xs&#39;, &#39;i_Na&#39;, &#39;m_inf&#39;, &#39;alpha_m&#39;, &#39;beta_m&#39;, &#39;tau_m&#39;, &#39;h_inf&#39;, &#39;alpha_h&#39;, &#39;beta_h&#39;, &#39;tau_h&#39;, &#39;j_inf&#39;, &#39;alpha_j&#39;, &#39;beta_j&#39;, &#39;tau_j&#39;, &#39;i_b_Na&#39;, &#39;i_CaL&#39;, &#39;d_inf&#39;, &#39;alpha_d&#39;, &#39;beta_d&#39;, &#39;gamma_d&#39;, &#39;tau_d&#39;, &#39;f_inf&#39;, &#39;tau_f&#39;, &#39;alpha_fCa&#39;, &#39;beta_fCa&#39;, &#39;gama_fCa&#39;, &#39;fCa_inf&#39;, &#39;tau_fCa&#39;, &#39;d_fCa&#39;, &#39;i_b_Ca&#39;, &#39;i_to&#39;, &#39;s_inf&#39;, &#39;tau_s&#39;, &#39;r_inf&#39;, &#39;tau_r&#39;, &#39;i_NaK&#39;, &#39;i_NaCa&#39;, &#39;i_p_Ca&#39;, &#39;i_p_K&#39;, &#39;i_rel&#39;, &#39;i_up&#39;, &#39;i_leak&#39;, &#39;g_inf&#39;, &#39;d_g&#39;, &#39;Ca_i_bufc&#39;, &#39;Ca_sr_bufsr&#39;, &#39;Istim&#39;, &#39;i_Stim&#39;, &#39;dXr1_dt&#39;, &#39;dXr2_dt&#39;, &#39;dXs_dt&#39;, &#39;dm_dt&#39;, &#39;dh_dt&#39;, &#39;dj_dt&#39;, &#39;dd_dt&#39;, &#39;df_dt&#39;, &#39;dfCa_dt&#39;, &#39;ds_dt&#39;, &#39;dr_dt&#39;, &#39;dg_dt&#39;, &#39;dCa_i_dt&#39;, &#39;dCa_SR_dt&#39;, &#39;dNa_i_dt&#39;, &#39;dV_dt&#39;, &#39;dK_i_dt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i_CaL</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9bc03544c0&gt;]
+</pre></div>
+</div>
+<img alt="_images/Cav12_13_1.png" src="_images/Cav12_13_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">default_parameters</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;P_kna&#39;, &#39;g_K1&#39;, &#39;g_Kr&#39;, &#39;g_Ks&#39;, &#39;g_Na&#39;, &#39;g_bna&#39;, &#39;g_CaL&#39;, &#39;g_bca&#39;, &#39;g_to&#39;, &#39;K_mNa&#39;, &#39;K_mk&#39;, &#39;P_NaK&#39;, &#39;K_NaCa&#39;, &#39;K_sat&#39;, &#39;Km_Ca&#39;, &#39;Km_Nai&#39;, &#39;alpha&#39;, &#39;gamma&#39;, &#39;K_pCa&#39;, &#39;g_pCa&#39;, &#39;g_pK&#39;, &#39;Buf_c&#39;, &#39;Buf_sr&#39;, &#39;Ca_o&#39;, &#39;K_buf_c&#39;, &#39;K_buf_sr&#39;, &#39;K_up&#39;, &#39;V_leak&#39;, &#39;V_sr&#39;, &#39;Vmax_up&#39;, &#39;a_rel&#39;, &#39;b_rel&#39;, &#39;c_rel&#39;, &#39;tau_g&#39;, &#39;Na_o&#39;, &#39;IstimAmplitude&#39;, &#39;IstimEnd&#39;, &#39;IstimPeriod&#39;, &#39;IstimPulseDuration&#39;, &#39;IstimStart&#39;, &#39;Cm&#39;, &#39;F&#39;, &#39;R&#39;, &#39;T&#39;, &#39;V_c&#39;, &#39;K_o&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;g_CaL&quot;</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">0.2</span>
+<span class="n">t2</span><span class="p">,</span> <span class="n">u2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">t_start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="n">parameters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Update paramameter g_CaL from 0.000175 to 3.5000000000000004e-05
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">V_kr_block</span> <span class="o">=</span> <span class="n">u2</span><span class="p">[:,</span> <span class="n">V_index</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Original&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">V_kr_block</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Kr block&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9b70359d30&gt;
+</pre></div>
+</div>
+<img alt="_images/Cav12_17_1.png" src="_images/Cav12_17_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">widget</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Original&quot;</span><span class="p">)</span>
+<span class="n">line_V</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CaL block&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Voltage&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i_CaL</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Original&quot;</span><span class="p">)</span>
+<span class="n">line_iCaL</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i_CaL</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CaL block&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;i CaL&quot;</span><span class="p">)</span>
+
+<span class="nd">@widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">Kr_block</span><span class="p">(</span><span class="n">block</span><span class="p">):</span>
+    <span class="n">parameters</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">default_parameters</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;g_CaL&quot;</span><span class="p">]</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">block</span><span class="p">)</span>
+    <span class="n">t2</span><span class="p">,</span> <span class="n">u2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">t_start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="n">parameters</span><span class="p">)</span>
+    <span class="n">monitor</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">monitor</span><span class="p">(</span><span class="n">u2</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+    <span class="n">i_CaL_block</span> <span class="o">=</span> <span class="n">monitor</span><span class="p">[:,</span> <span class="n">i_CaL_index</span><span class="p">]</span>
+    <span class="n">V_CaL_block</span> <span class="o">=</span> <span class="n">u2</span><span class="p">[:,</span> <span class="n">V_index</span><span class="p">]</span>
+    <span class="n">line_V</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">V_CaL_block</span><span class="p">)</span>
+    <span class="n">line_iCaL</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">i_CaL_block</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>
+ 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "f77c189738b14d0a9fabd42fc966f77d", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "05eaae465a54468ea0fadce163e5d14c", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="cellml.html" title="previous page">The CellML model repository</a>
+    <a class='right-next' id="next-link" href="Kir21.html" title="next page">hERG channel</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Henrik Finsberg<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
