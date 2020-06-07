@@ -5,6 +5,7 @@ channels:
 dependencies:
   - python
   - numpy
+  - sphinx
   - scipy
   - matplotlib
   - html5lib
@@ -18,3 +19,4 @@ dependencies:
   - pip:
       - gotran
       - gitpython
+      - jupyter-book>=0.7.0b
