@@ -19,7 +19,6 @@ help:
 
 docs: ## Build book
 	jupyter-book build .
-	cp -r book/docs/lectures/week1/fig book/_build/html/docs/lectures/week1/
 
 clean: clean-build clean-pyc clean-ipynb ## remove all build, test, coverage and Python artifacts
 

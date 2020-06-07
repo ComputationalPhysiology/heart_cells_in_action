@@ -20,3 +20,4 @@ dependencies:
       - gotran
       - gitpython
       - jupyter-book>=0.7.0b
+      - jupytext
