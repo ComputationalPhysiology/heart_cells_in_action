@@ -1,0 +1,11 @@
+- file: README.md
+- file: index.ipynb
+- file: heart_cell.ipynb
+- file: action_potential.ipynb
+- file: python_model.ipynb
+- file: cellml.ipynb
+- file: Cav12.ipynb
+- file: Kir21.ipynb
+- file: Kv43.ipynb
+- file: KvLQT1.ipynb
+- file: Nav15.ipynb

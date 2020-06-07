@@ -1,0 +1,40 @@
+#######################################################################################
+# Book settings
+title: Heart cells in Action
+author: Henrik Finsberg
+# logo: "logo.png"
+
+# Information about where the book exists on the web
+description: >-
+  Heart Cells in Action is a platform for learning about the cardiac cells using computational models.
+
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks: cache
+
+#######################################################################################
+# HTML-specific settings
+html:
+  home_page_in_navbar: true
+  use_edit_page_button: true
+  use_issues_button: true
+
+# #######################################################################################
+# Interact link settings
+notebook_interface: "notebook"
+
+#######################################################################################
+# Launch button settings
+repository:
+  url: https://github.com/ComputationalPhysiology/heart_cells_in_action
+  path_to_book: "."
+
+binder:
+  binderhub_url: "https://mybinder.org"
+  text: "Launch binder"
+
+latex:
+  latex_engine: "xelatex"
+  latex_documents:
+    targetname: book.tex
