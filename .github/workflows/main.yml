@@ -24,6 +24,8 @@ jobs:
 
       # Set up Miniconda with environment
       - name: Setup Miniconda
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         uses: goanpeca/setup-miniconda@v1.1.2
         with:
           environment-file: environment.yml
