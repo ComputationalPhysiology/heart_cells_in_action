@@ -1,21 +1,42 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The CellML model repository &#8212; Heart cells in Action</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -23,19 +44,26 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="L-type Ca channel" href="Cav12.html" />
     <link rel="prev" title="&lt;no title&gt;" href="python_model.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -55,50 +83,67 @@
   <h1 class="site-logo" id="site-title">Heart cells in Action</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="README.html">Heart Cells in Action</a>
-  </li>
-  <li class="">
-    <a href="index.html">Cellmodel tutorials</a>
-  </li>
-  <li class="">
-    <a href="heart_cell.html">Introducing the heart cells</a>
-  </li>
-  <li class="">
-    <a href="action_potential.html">The action potential</a>
-  </li>
-  <li class="active">
-    <a href="">The CellML model repository</a>
-  </li>
-  <li class="">
-    <a href="Cav12.html">L-type Ca channel</a>
-  </li>
-  <li class="">
-    <a href="Kir21.html">hERG channel</a>
-  </li>
-  <li class="">
-    <a href="Kv43.html">hERG channel</a>
-  </li>
-  <li class="">
-    <a href="KvLQT1.html">hERG channel</a>
-  </li>
-  <li class="">
-    <a href="Nav15.html">hERG channel</a>
-  </li>
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Heart Cells in Action
+  </a>
+ </li>
 </ul>
-</nav>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Cellmodel tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="heart_cell.html">
+   Introducing the heart cells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="action_potential.html">
+   The action potential
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The CellML model repository
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cav12.html">
+   L-type Ca channel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Kir21.html">
+   hERG channel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Kv43.html">
+   hERG channel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="KvLQT1.html">
+   hERG channel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Nav15.html">
+   hERG channel
+  </a>
+ </li>
+</ul>
 
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -118,72 +163,81 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
-
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/cellml.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
-        <!-- Source interaction buttons -->
         
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-            <div class="dropdown-buttons sourcebuttons">
-                <a class="repository-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
-                <a class="issues-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action/issues/new?title=Issue%20on%20page%20%2Fcellml.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-                <a class="edit-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action/edit/master/./cellml.ipynb"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-            </div>
-        </div>
-        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-            <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org/v2/gh/ComputationalPhysiology/heart_cells_in_action/master?urlpath=tree/./cellml.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
-                
-                
-                
-            </div>
-        </div>
-        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/cellml.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-    </ul>
-</nav>
-
-
-
-<div class="tocsection editthispage">
-    <a href="https://github.com/ComputationalPhysiology/heart_cells_in_action/edit/master/./cellml.ipynb">
-        <i class="fas fa-pencil-alt"></i> Edit this page
-    </a>
 </div>
 
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/ComputationalPhysiology/heart_cells_in_action/issues/new?title=Issue%20on%20page%20%2Fcellml.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ComputationalPhysiology/heart_cells_in_action/edit/master/./cellml.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ComputationalPhysiology/heart_cells_in_action/master?urlpath=tree/./cellml.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -197,7 +251,7 @@
 <p>For the purpose of this tutorail we have written a small utility script which allows for automatically downloading and generating gotran <code class="docutils literal notranslate"><span class="pre">ode</span></code> files from a cellml model</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">utils</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">utils</span>
 </pre></div>
 </div>
 </div>
@@ -205,14 +259,23 @@
 <p>Create an instance of a <code class="docutils literal notranslate"><span class="pre">CellML</span></code> class which will scrape the cellml model repository and collect all the available models</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">CellML</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">CellML</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>List all models in the CellML repository</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span><span class="o">.</span><span class="n">list_models</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;severi_fantini_charawi_difrancesco_2012&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;severi_fantini_charawi_difrancesco_2012&#39;,
  &#39;A 0D model of the Heart&#39;,
  &#39;A Bifurcation Analysis of Two Coupled Calcium Oscillators, Bindschadler and Sneyd 2001&#39;,
+ &#39;A computational human ventricular electrophysiological model&#39;,
  &#39;A computational model of the human left-ventricular epicardial myocyte, Iyer, Mazhari, Winslow, 2004&#39;,
  &#39;A mathematical model of rat distal convoluted tubule. I. Cotransporter function in early DCT.&#39;,
  &#39;A mathematical model of the outer medullary collecting duct of the rat, A.M. Weinstein, 2000&#39;,
@@ -259,6 +322,7 @@
  &#39;Bakker, Mensonides, Teusink, Vanhoek, Michels, Westerhoff, 2000&#39;,
  &#39;Bakker, Michels, Opperdoes, Westerhoff, 1997&#39;,
  &#39;Barberis, Klipp, Vanoni, Alberghina, 2007&#39;,
+ &#39;Bartolucci_Passini_Severi_2020&#39;,
  &#39;Basket Catheter Emulator&#39;,
  &#39;Baylor, Hollingworth, Chandler, 2002&#39;,
  &#39;Beard, 2005&#39;,
@@ -282,7 +346,9 @@
  &#39;Bindschadler, Sneyd, 2001&#39;,
  &#39;Bingzheng, Zhenye, Liansong, 1990&#39;,
  &#39;Biophysical Characteristics of the Pig Kidney Na/Glucose Cotransporter SGLT2 Reveal a Common Mechanism for SGLT1 and SGLT2, Mackenzie, Loo, Panayotova-Heiermann and Wright, 1996&#39;,
+ &#39;Blood HbO2 and HbCO2 Dissociation Curves&#39;,
  &#39;Body flatmap&#39;,
+ &#39;Bond Graph Circulation&#39;,
  &#39;Bondarenko, Szigeti, Bett, Kim, Rasmusson, 2004&#39;,
  &#39;BondGraph Basic&#39;,
  &#39;Bonhoeffer, Rembiszewski, Ortiz, Nixon, 2000&#39;,
@@ -378,7 +444,6 @@
  &#39;Demir, Clark, Giles, 1999&#39;,
  &#39;Demir, Clark, Giles, Murphey, 1994&#39;,
  &#39;Demiray, 1981&#39;,
- &#39;Demonstration workspace for a model&#39;,
  &#39;Dempsher, Gann, Phair, 1984&#39;,
  &#39;Depaor, Timmons, 1986&#39;,
  &#39;Dependence of the period on the rate of protein degradation in minimal models for circadian oscillations   &#39;,
@@ -450,6 +515,17 @@
  &#39;Garny, Kohl, Hunter, Boyett, Noble, 2003&#39;,
  &#39;Gasser, Ogden, Holzapfel, 2006&#39;,
  &#39;Gattoni 2016&#39;,
+ &#39;Generic cat bladder scaffold&#39;,
+ &#39;Generic human colon scaffold&#39;,
+ &#39;Generic human heart scaffold&#39;,
+ &#39;Generic human lung scaffold&#39;,
+ &#39;Generic mouse colon scaffold&#39;,
+ &#39;Generic mouse lung scaffold&#39;,
+ &#39;Generic pig colon scaffold&#39;,
+ &#39;Generic pig heart scaffold&#39;,
+ &#39;Generic rat bladder scaffold&#39;,
+ &#39;Generic rat heart scaffold&#39;,
+ &#39;Generic rat stomach scaffold&#39;,
  &#39;Gerard and Goldbeter 2009&#39;,
  &#39;get-library&#39;,
  &#39;Gilbert, Heiner, Rosser, Fulton, Gu, Trybilo, 2007&#39;,
@@ -465,6 +541,7 @@
  &#39;Goldbeter, Pourquie, 2008&#39;,
  &#39;Gonzalezheydrich, Steingard, Kohane, 1994&#39;,
  &#39;Goodwin, 1965&#39;,
+ &#39;Grandi et al. 2011 Atrial Action Potential and Ca2+ Model&#39;,
  &#39;Grandi, Pasqualini and Bers, 2010&#39;,
  &#39;Grange 2001&#39;,
  &#39;Greenstein, Wu, Po, Tomaselli, Winslow, 2000&#39;,
@@ -523,6 +600,7 @@
  &#39;Human Left Ventricle&#39;,
  &#39;Human Stomach Scaffold&#39;,
  &#39;Hund, Rudy, 2004&#39;,
+ &#39;Hunt, Tilunaite, Bass, Soeller, Roderick, Rajagopal, Crampin&#39;,
  &#39;Hunter, Mcculloch, Terkeurs, 1998&#39;,
  &#39;Hunter, Mcnaughton, Noble, 1975&#39;,
  &#39;Hunter, Smaill, Hunter, 1995&#39;,
@@ -560,6 +638,7 @@
  &#39;Kirschner, Panetta, 1998&#39;,
  &#39;Kirschner, Webb, 1996&#39;,
  &#39;Kneller, Ramirez, Chartier, Courtemanche, Nattel, 2002&#39;,
+ &#39;Koivumäki,  Korhonen, Tavi 2011 Atrial AP model&#39;,
  &#39;Koivumaki,2009&#39;,
  &#39;Komarova 2005&#39;,
  &#39;Komarova, Smith, Dixon, Sims and Wahl, 2003&#39;,
@@ -620,6 +699,7 @@
  &#39;Maurya et al. 2005&#39;,
  &#39;Mazhari, Greenstein, Winslow, Marban, Nuss, 2001&#39;,
  &#39;Mcallister, Noble, Tsien, 1975&#39;,
+ &#39;McIntyre, Richardson, Grill, 2001&#39;,
  &#39;Mckenzie, Sneyd, 1998&#39;,
  &#39;Mclean, Su, Vandenbogert, 2003&#39;,
  &#39;Mears 1997&#39;,
@@ -636,6 +716,7 @@
  &#39;Mittler, Sulzer, Neumann, Perelson, 1998&#39;,
  &#39;Mlcek, Neumann, Kittnar, Novak, 2001&#39;,
  &#39;Model of a rabbit Purkinje cell&#39;,
+ &#39;Model of skeletal muscle cramp and its reversal&#39;,
  &#39;Models for the OpenCOR and PMR tutorial by Peter Hunter&#39;,
  &#39;Modular Analysis of Signal Transduction Networks&#39;,
  &#39;Mohr, Taylor, Newell, 2008&#39;,
@@ -713,6 +794,7 @@
  &#39;Perelson, Neumann, Markowitz, Leonard, Ho, 1996&#39;,
  &#39;Peterson and Riggs, 2010&#39;,
  &#39;pH control&#39;,
+ &#39;pH Regulation&#39;,
  &#39;Phillips 2007&#39;,
  &#39;Phillips 2008&#39;,
  &#39;Pivonka, Zimak, Smith, Gardiner, Dunstan, Sims, Martin and Mundy, 2008&#39;,
@@ -789,6 +871,7 @@
  &#39;SED-ML example&#39;,
  &#39;Sedaghat, Sherman, Quon, 2002&#39;,
  &#39;Seemann, Sachse, Weib, Dossel, 2003&#39;,
+ &#39;SEIR&#39;,
  &#39;semantic-annotation&#39;,
  &#39;Session Resource Workspace&#39;,
  &#39;Shannon, Wang, Puglisi, Weber, Bers, 2004&#39;,
@@ -850,6 +933,7 @@
  &#39;Tentusscher, Panfilov, 2006&#39;,
  &#39;Terkildsen, Niederer, Crampin, Hunter, Smith, 2008&#39;,
  &#39;Test Area&#39;,
+ &#39;Test cellml model(s) for LibOmexMeta&#39;,
  &#39;Test model for using data to control a variable value&#39;,
  &#39;Testing plugin annotation&#39;,
  &#39;Testing RDF linking across CellML, SED-ML, and SVG&#39;,
@@ -857,6 +941,7 @@
  &#39;Tham 2008&#39;,
  &#39;The cardiac Na+ /K+ ATPase: An updated, thermodynamically consistent model&#39;,
  &#39;The Glucose-induced Switch Between Glycogen Phosphorylase and Glycogen  Synthase in the Liver: Outlines of a Theoretical Approach&#39;,
+ &#39;The inflection point hypothesis: The relationship between the temperature dependence of enzyme catalyzed reaction rates and microbial growth rates&#39;,
  &#39;Thomas, 2000&#39;,
  &#39;Thomsen, Neubig, 1989&#39;,
  &#39;Tolic, Mosekilde, Sturis, 2000&#39;,
@@ -891,6 +976,7 @@
  &#39;Virtual Bacterial Photography&#39;,
  &#39;Viswanathan, Shaw, Rudy, 1999&#39;,
  &#39;viswanathan_shaw_rudy_1999&#39;,
+ &#39;Voigt, Heijman et al. 2013 human atrial AP model&#39;,
  &#39;Volume mesh of liver&#39;,
  &#39;VPH-MIP case study on CellML&#39;,
  &#39;Wanant, Quon, 2000&#39;,
@@ -942,23 +1028,15 @@
 </div>
 </div>
 </div>
-<p>List all models in the CellML repository</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span><span class="o">.</span><span class="n">list_models</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>List only the models that contains the name <code class="docutils literal notranslate"><span class="pre">tentusscher</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span><span class="o">.</span><span class="n">list_models</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;tentusscher&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span><span class="o">.</span><span class="n">list_models</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;tentusscher&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;Tentusscher, Noble, Noble, Panfilov, 2004&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Tentusscher, Noble, Noble, Panfilov, 2004&#39;,
  &#39;Tentusscher, Noble, Noble, Panfilov, 2006&#39;,
  &#39;Tentusscher, Panfilov, 2006&#39;]
 </pre></div>
@@ -968,16 +1046,12 @@
 <p>List the cellml models that are stored locally</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_cellml_models</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_cellml_models</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;tentusscher_panfilov_2006&#39;: [&#39;ten_tusscher_model_2006_IK1Ko_epi_units.cellml&#39;,
-  &#39;ten_tusscher_model_2006_IK1Ko_endo_units.cellml&#39;,
-  &#39;ten_tusscher_model_2006_IK1Ko_M_units.cellml&#39;],
- &#39;tentusscher_noble_noble_panfilov_2006&#39;: [&#39;tentusscher_noble_noble_panfilov_2006_c.cellml&#39;],
- &#39;severi_fantini_charawi_difrancesco_2012&#39;: [&#39;severi_fantini_charawi_difrancesco_2012.cellml&#39;]}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;tentusscher_noble_noble_panfilov_2006&#39;: [&#39;tentusscher_noble_noble_panfilov_2006_c.cellml&#39;]}
 </pre></div>
 </div>
 </div>
@@ -985,12 +1059,12 @@
 <p>Download the model <code class="docutils literal notranslate"><span class="pre">Tentusscher,</span> <span class="pre">Noble,</span> <span class="pre">Noble,</span> <span class="pre">Panfilov,</span> <span class="pre">2006</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span><span class="o">.</span><span class="n">download_model</span><span class="p">(</span><span class="s2">&quot;Tentusscher, Noble, Noble, Panfilov, 2006&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellml</span><span class="o">.</span><span class="n">download_model</span><span class="p">(</span><span class="s2">&quot;Tentusscher, Noble, Noble, Panfilov, 2006&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Download model Tentusscher, Noble, Noble, Panfilov, 2006 for https://models.physiomeproject.org/workspace/tentusscher_noble_noble_panfilov_2006 to /Users/henriknf/local/src/cell_model/models/cellml/tentusscher_noble_noble_panfilov_2006
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download model Tentusscher, Noble, Noble, Panfilov, 2006 for https://models.physiomeproject.org/workspace/tentusscher_noble_noble_panfilov_2006 to /home/runner/work/heart_cells_in_action/heart_cells_in_action/models/cellml/tentusscher_noble_noble_panfilov_2006
 </pre></div>
 </div>
 </div>
@@ -998,16 +1072,12 @@
 <p>List the cellml models that are stored locally again and see that we now have a new model available</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_cellml_models</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_cellml_models</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;tentusscher_panfilov_2006&#39;: [&#39;ten_tusscher_model_2006_IK1Ko_epi_units.cellml&#39;,
-  &#39;ten_tusscher_model_2006_IK1Ko_endo_units.cellml&#39;,
-  &#39;ten_tusscher_model_2006_IK1Ko_M_units.cellml&#39;],
- &#39;tentusscher_noble_noble_panfilov_2006&#39;: [&#39;tentusscher_noble_noble_panfilov_2006_c.cellml&#39;],
- &#39;severi_fantini_charawi_difrancesco_2012&#39;: [&#39;severi_fantini_charawi_difrancesco_2012.cellml&#39;]}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;tentusscher_noble_noble_panfilov_2006&#39;: [&#39;tentusscher_noble_noble_panfilov_2006_c.cellml&#39;]}
 </pre></div>
 </div>
 </div>
@@ -1015,13 +1085,12 @@
 <p>List all the local gotran ode files</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_ode_models</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_ode_models</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;tentusscher_2004_mcell_updated.ode&#39;,
- &#39;paci_hyttinen_aaltosetala_severi_ventricularVersion.ode&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;tentusscher_noble_noble_panfilov_2006_c.ode&#39;]
 </pre></div>
 </div>
 </div>
@@ -1029,7 +1098,7 @@
 <p>Generate a gotran ode file from the newly downloaded cellml model</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">cellml2gotran</span><span class="p">(</span><span class="s1">&#39;tentusscher_noble_noble_panfilov_2006&#39;</span><span class="p">,</span> <span class="s1">&#39;tentusscher_noble_noble_panfilov_2006_c.cellml&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">cellml2gotran</span><span class="p">(</span><span class="s1">&#39;tentusscher_noble_noble_panfilov_2006&#39;</span><span class="p">,</span> <span class="s1">&#39;tentusscher_noble_noble_panfilov_2006_c.cellml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1037,20 +1106,37 @@
 <p>List all the local gotran ode files again and see that it has been updated</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_ode_models</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">list_ode_models</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;tentusscher_noble_noble_panfilov_2006_c.ode&#39;,
- &#39;tentusscher_2004_mcell_updated.ode&#39;,
- &#39;paci_hyttinen_aaltosetala_severi_ventricularVersion.ode&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;tentusscher_noble_noble_panfilov_2006_c.ode&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -1080,7 +1166,10 @@
       </div>
     </div>
 
-    <script src="_static/js/index.js"></script>
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>

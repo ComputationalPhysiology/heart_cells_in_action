@@ -1,26 +1,51 @@
 Traceback (most recent call last):
-  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/jupyter_cache/executors/basic.py", line 163, in execute
-    executenb(nb_bundle.nb, cwd=tmpdirname, timeout=timeout)
-  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbconvert/preprocessors/execute.py", line 737, in executenb
-    return ep.preprocess(nb, resources, km=km)[0]
-  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbconvert/preprocessors/execute.py", line 405, in preprocess
-    nb, resources = super(ExecutePreprocessor, self).preprocess(nb, resources)
-  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbconvert/preprocessors/base.py", line 69, in preprocess
-    nb.cells[index], resources = self.preprocess_cell(cell, resources, index)
-  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbconvert/preprocessors/execute.py", line 448, in preprocess_cell
-    raise CellExecutionError.from_cell_and_msg(cell, out)
-nbconvert.preprocessors.execute.CellExecutionError: An error occurred while executing the following cell:
+  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbclient/client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbclient/client.py", line 541, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbclient/client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/usr/share/miniconda/envs/heart_cells_in_action/lib/python3.7/site-packages/nbclient/client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import utils
-import matplotlib.pyplot as plt
+model = utils.load_model(model_name)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-1-392c41ff9d93>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mimport[0m [0mutils[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0;32mimport[0m [0mmatplotlib[0m[0;34m.[0m[0mpyplot[0m [0;32mas[0m [0mplt[0m[0;34m[0m[0;34m[0m[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m<ipython-input-4-da44704ca200>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mmodel[0m [0;34m=[0m [0mutils[0m[0;34m.[0m[0mload_model[0m[0;34m([0m[0mmodel_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m~/work/heart_cells_in_action/heart_cells_in_action/utils.py[0m in [0;36mload_model[0;34m(model, rebuild)[0m
+[1;32m    146[0m [0;34m[0m[0m
+[1;32m    147[0m     [0;31m# Check if model is present[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 148[0;31m     [0mcfile[0m [0;34m=[0m [0mcpath[0m[0;34m([0m[0mmodel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    149[0m     [0;32mif[0m [0;32mnot[0m [0mcfile[0m[0;34m.[0m[0mis_file[0m[0;34m([0m[0;34m)[0m [0;32mor[0m [0mrebuild[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    150[0m         [0mgotran2c[0m[0;34m([0m[0mmodel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'utils'
-ModuleNotFoundError: No module named 'utils'
+[0;32m~/work/heart_cells_in_action/heart_cells_in_action/utils.py[0m in [0;36mcpath[0;34m(model)[0m
+[1;32m     85[0m [0;34m[0m[0m
+[1;32m     86[0m [0;32mdef[0m [0mcpath[0m[0;34m([0m[0mmodel[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 87[0;31m     [0modefile[0m [0;34m=[0m [0mget_full_ode_path[0m[0;34m([0m[0mmodel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     88[0m     return Path(re.sub(str(MODEL_ODE_DIR), str(MODEL_C_DIR), str(odefile))).with_suffix(
+[1;32m     89[0m         [0;34m".h"[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/work/heart_cells_in_action/heart_cells_in_action/utils.py[0m in [0;36mget_full_ode_path[0;34m(model)[0m
+[1;32m    133[0m     [0mall_models[0m [0;34m=[0m [0;34m", "[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0mlist_ode_models[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    134[0m     [0mmsg[0m [0;34m=[0m [0;34mf"Could not find model, available models are {all_models}"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 135[0;31m     [0;32mraise[0m [0mValueError[0m[0;34m([0m[0mmsg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    136[0m [0;34m[0m[0m
+[1;32m    137[0m [0;34m[0m[0m
+
+[0;31mValueError[0m: Could not find model, available models are tentusscher_noble_noble_panfilov_2006_c.ode
+ValueError: Could not find model, available models are tentusscher_noble_noble_panfilov_2006_c.ode
 
