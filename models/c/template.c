@@ -43,7 +43,7 @@ void monitored_values(double* monitored, double* states,
                       double* t_values, int length) {
     double t;
     int i, j;
-    for (i = 0; i <= length; i++) {
+    for (i = 0; i < length; i++) {
         t = t_values[i];
         for (j = 0; j < NUM_STATES; j++) {
             u[j] = states[i * NUM_STATES + j];
@@ -60,7 +60,7 @@ void monitored_values_single(double* monitored, double* states,
                              double* t_values, int length, int index) {
     double t;
     int i, j;
-    for (i = 0; i <= length; i++) {
+    for (i = 0; i < length; i++) {
         t = t_values[i];
         for (j = 0; j < NUM_STATES; j++) {
             u[j] = states[i * NUM_STATES + j];
